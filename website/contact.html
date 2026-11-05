@@ -89,25 +89,27 @@
         </div>
       </div>
 
-      <!-- Specification Form -->
-      <div style="background: var(--paper); padding: 50px 44px; border: 1px solid var(--border);">
-        <h3 style="font-size: 26px; margin-bottom: 8px;">Technical Specification Request</h3>
-        <p style="font-size: 14.5px; color: #666; margin-bottom: 30px;">Complete the fields below to initiate your 42-point stack inspection.</p>
+            <!-- Executive Technical Specification Request Card (Exact Screenshot Match) -->
+      <div class="executive-spec-card">
+        <span class="executive-badge">EXECUTIVE DIAGNOSTIC</span>
+        <h3>Technical Specification Request</h3>
+        <p class="form-subtitle">Complete the fields below to initiate your 42-point stack inspection.</p>
 
-        <form class="dovetale-consultation-form" style="display: flex; flex-direction: column; gap: 20px;">
-          <div>
-            <label style="display: block; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Full Name *</label>
-            <input type="text" required placeholder="e.g. David Vance" style="width: 100%; padding: 14px 18px; border: 1px solid var(--border); background: #ffffff; font-family: inherit; font-size: 15px;">
+        <form class="dovetale-consultation-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Diagnostic request received. An executive architect will contact you within 4 business hours.');">
+          
+          <div class="exec-field-group">
+            <label>FULL NAME <span class="req">*</span></label>
+            <input type="text" class="exec-input" required placeholder="e.g. David Vance">
           </div>
 
-          <div>
-            <label style="display: block; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Work Email *</label>
-            <input type="email" required placeholder="david@company.com" style="width: 100%; padding: 14px 18px; border: 1px solid var(--border); background: #ffffff; font-family: inherit; font-size: 15px;">
+          <div class="exec-field-group">
+            <label>WORK EMAIL <span class="req">*</span></label>
+            <input type="email" class="exec-input" required placeholder="david@company.com">
           </div>
 
-          <div>
-            <label style="display: block; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Monthly Digital Ad Spend</label>
-            <select style="width: 100%; padding: 14px 18px; border: 1px solid var(--border); background: #ffffff; font-family: inherit; font-size: 15px;">
+          <div class="exec-field-group">
+            <label>MONTHLY DIGITAL AD SPEND</label>
+            <select class="exec-select">
               <option>$10,000 &ndash; $25,000 / month</option>
               <option selected>$25,000 &ndash; $100,000 / month</option>
               <option>$100,000 &ndash; $500,000 / month</option>
@@ -115,23 +117,50 @@
             </select>
           </div>
 
-          <div>
-            <label style="display: block; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Primary Infrastructure Priorities</label>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px; margin-top: 6px;">
-              <label style="display: flex; gap: 8px; align-items: center;"><input type="checkbox" checked> Server-Side CAPI</label>
-              <label style="display: flex; gap: 8px; align-items: center;"><input type="checkbox" checked> CRM Pipeline Sync</label>
-              <label style="display: flex; gap: 8px; align-items: center;"><input type="checkbox"> Attribution Modeling</label>
-              <label style="display: flex; gap: 8px; align-items: center;"><input type="checkbox"> CRO Testing Matrix</label>
+          <div class="exec-field-group">
+            <label>PRIMARY INFRASTRUCTURE PRIORITIES</label>
+            <div class="exec-priorities-grid">
+              <label class="exec-priority-tile">
+                <input type="checkbox" name="priority" value="capi" checked>
+                <span class="exec-checkbox-box">
+                  <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+                </span>
+                <span class="exec-priority-label">Server-Side CAPI</span>
+              </label>
+
+              <label class="exec-priority-tile">
+                <input type="checkbox" name="priority" value="crm" checked>
+                <span class="exec-checkbox-box">
+                  <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+                </span>
+                <span class="exec-priority-label">CRM Pipeline Sync</span>
+              </label>
+
+              <label class="exec-priority-tile">
+                <input type="checkbox" name="priority" value="attribution">
+                <span class="exec-checkbox-box">
+                  <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+                </span>
+                <span class="exec-priority-label">Attribution Modeling</span>
+              </label>
+
+              <label class="exec-priority-tile">
+                <input type="checkbox" name="priority" value="cro">
+                <span class="exec-checkbox-box">
+                  <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+                </span>
+                <span class="exec-priority-label">CRO Testing Matrix</span>
+              </label>
             </div>
           </div>
 
-          <div>
-            <label style="display: block; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Current Stack / Notes</label>
-            <textarea rows="3" placeholder="List your key tools (e.g. GTM, Meta Ads, HubSpot, Shopify, Segment, BigQuery)..." style="width: 100%; padding: 14px 18px; border: 1px solid var(--border); background: #ffffff; font-family: inherit; font-size: 15px;"></textarea>
+          <div class="exec-field-group">
+            <label>CURRENT STACK / NOTES</label>
+            <textarea class="exec-textarea" rows="3" placeholder="List your key tools (e.g. GTM, Meta Ads, HubSpot, Shopify, Segment, BigQuery)..."></textarea>
           </div>
 
-          <button type="submit" class="pill dark" style="width: 100%; justify-content: center; margin-top: 10px;">
-            Submit Diagnostic Request ↗
+          <button type="submit" class="exec-submit-btn">
+            SUBMIT DIAGNOSTIC REQUEST <span class="arrow-icon">&rarr;</span>
           </button>
         </form>
       </div>

@@ -2739,3 +2739,252 @@ footer span {
     padding: 36px 28px;
   }
 }
+
+/* ==========================================================================
+   EXECUTIVE DARK SPECIFICATION REQUEST FORM (EXACT SCREENSHOT MATCH)
+   ========================================================================== */
+.executive-spec-card {
+  background: #182226;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 52px 48px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.executive-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201, 154, 94, 0.12);
+  border: 1px solid rgba(201, 154, 94, 0.3);
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  font-family: 'DM Mono', monospace, ui-monospace;
+  color: #c99a5e;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.executive-badge::before {
+  content: '●';
+  color: #c99a5e;
+  font-size: 9px;
+}
+
+.executive-spec-card h3 {
+  font-size: 34px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.executive-spec-card .form-subtitle {
+  font-size: 14.5px;
+  color: #879a9f;
+  line-height: 1.6;
+  margin-bottom: 34px;
+}
+
+.exec-field-group {
+  margin-bottom: 22px;
+}
+
+.exec-field-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #879a9f;
+  font-family: 'DM Mono', monospace, ui-monospace;
+  margin-bottom: 8px;
+}
+
+.exec-field-group label .req {
+  color: #c99a5e;
+}
+
+.exec-input,
+.exec-select,
+.exec-textarea {
+  width: 100%;
+  background: #233137;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px;
+  padding: 16px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #ffffff !important;
+  font-weight: 450;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.45), 0 4px 10px -2px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.exec-input::placeholder,
+.exec-textarea::placeholder {
+  color: #8da4ac !important;
+  font-weight: 400;
+}
+
+.exec-input:focus,
+.exec-select:focus,
+.exec-textarea:focus {
+  background: #283942;
+  box-shadow: 0 14px 32px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 0 2px rgba(201, 154, 94, 0.65);
+}
+
+.exec-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c99a5e%22%20stroke-width%3D%222.5%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  cursor: pointer;
+}
+
+.exec-select option {
+  background: #1b262b;
+  color: #ffffff;
+}
+
+/* Executive Priority Tiles (Dark Chips with Custom Checkbox) */
+.exec-priorities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.exec-priority-tile {
+  background: #233137;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px -3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition: all 0.25s ease;
+  user-select: none;
+  position: relative;
+}
+
+.exec-priority-tile input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.exec-checkbox-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #151e22;
+  border: none !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.exec-checkbox-box svg {
+  width: 11px;
+  height: 11px;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  fill: none;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s ease;
+}
+
+.exec-priority-label {
+  font-size: 14px;
+  color: #a4bcc4;
+  font-weight: 450;
+  transition: color 0.2s ease;
+}
+
+.exec-priority-tile:hover {
+  background: #283840;
+  box-shadow: 0 12px 28px -3px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Checked state - amber box with white checkmark */
+.exec-priority-tile input:checked ~ .exec-checkbox-box {
+  background: #c99a5e;
+  box-shadow: 0 2px 8px rgba(201, 154, 94, 0.4);
+}
+
+.exec-priority-tile input:checked ~ .exec-checkbox-box svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.exec-priority-tile input:checked ~ .exec-priority-label {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Submit Diagnostic Request Button */
+.exec-submit-btn {
+  width: 100%;
+  height: 58px;
+  background: #c99a5e;
+  color: #ffffff;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'DM Mono', monospace, ui-monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 16px;
+  box-shadow: 0 14px 34px -4px rgba(201, 154, 94, 0.4), 0 6px 14px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.exec-submit-btn .arrow-icon {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.exec-submit-btn:hover {
+  background: #d8a96d;
+  box-shadow: 0 20px 44px -4px rgba(201, 154, 94, 0.55), 0 8px 18px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.exec-submit-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 680px) {
+  .executive-spec-card {
+    padding: 36px 24px;
+  }
+  .exec-priorities-grid {
+    grid-template-columns: 1fr;
+  }
+}
