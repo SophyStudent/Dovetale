@@ -5,20 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Dovetale Knowledge OS — Executive Study Atlas</title>
   
-  <!-- Fonts -->
+  <!-- High-Legibility Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="portal.css">
 </head>
 <body>
 
+  <!-- Backdrop for mobile sidebar drawer -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
   <div class="app-layout">
 
     <!-- =========================================================================
-         LEFT SIDEBAR: NAVIGATION, CURRICULUM & SEARCH
+         LEFT SIDEBAR: COLLAPSIBLE MODULE NAVIGATION & SEARCH
          ========================================================================= -->
     <aside class="sidebar" id="sidebar">
       
@@ -71,17 +74,16 @@
     </aside>
 
     <!-- =========================================================================
-         MAIN APPLICATION AREA
+         MAIN APPLICATION AREA: UNCONSTRAINED READING CANVAS
          ========================================================================= -->
     <main class="main-wrapper">
 
       <!-- Top Executive App Header -->
       <header class="app-header">
         <div class="header-left">
-          <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
+          <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle navigation">
+            <span>☰</span>
+            <span id="sidebarToggleText">Hide Sidebar</span>
           </button>
           <div class="header-breadcrumb" id="headerBreadcrumb">
             <span>Atlas</span>
@@ -91,26 +93,19 @@
         </div>
 
         <div class="header-actions" id="headerActions">
-          <!-- Dynamically populated (e.g. Mastered toggle, Search, Focus mode) -->
+          <!-- Dynamically populated (e.g. In-Header Table of Contents, Mastered toggle, Search) -->
         </div>
       </header>
 
-      <!-- Study Viewport: Content + Table of Contents -->
+      <!-- Study Viewport: Generous Centered Content -->
       <div class="study-viewport">
 
-        <!-- Scrollable Document Reader -->
+        <!-- Scrollable Document Reader (No right sidebar cramping content) -->
         <div class="study-scrollable">
           <div class="study-content-container" id="studyContentContainer">
             <!-- Dynamically populated by portal-engine.js -->
           </div>
         </div>
-
-        <!-- Sticky Right Table of Contents (Desktop) -->
-        <aside class="toc-sidebar" id="tocSidebar" style="display: none;">
-          <div id="tocList">
-            <!-- Dynamically populated with headings -->
-          </div>
-        </aside>
 
       </div>
 

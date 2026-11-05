@@ -1,13 +1,12 @@
 /**
- * DOVETALE KNOWLEDGE OS & STUDY ATLAS - ENGINE
- * Provides interactive rendering, markdown transformation, ASCII diagram enhancement,
- * checklist persistence (localStorage), universal search, and progress tracking.
+ * DOVETALE KNOWLEDGE OS & STUDY ATLAS - ENGINE (V2)
+ * High-legibility reader, collapsible navigation, in-header table of contents,
+ * interactive checklists with local persistence, universal search, and auto-save notes.
  */
 
 (function () {
   'use strict';
 
-  // Check data availability
   if (!window.STUDY_DATA) {
     console.error('STUDY_DATA is not loaded.');
     return;
@@ -16,16 +15,16 @@
   const { meta, documents } = window.STUDY_DATA;
 
   // LocalStorage State Keys
-  const STORAGE_KEY = 'dovetale_study_portal_state_v1';
+  const STORAGE_KEY = 'dovetale_study_portal_state_v2';
   let appState = {
     mastered: {},      // { [docId]: boolean }
     checklist: {},     // { [chkId]: boolean }
     notes: {},         // { [docId]: string }
     currentDocId: 'overview',
-    activeCategory: 'all'
+    activeCategory: 'all',
+    sidebarCollapsed: false
   };
 
-  // Load saved state
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -41,7 +40,8 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         mastered: appState.mastered,
         checklist: appState.checklist,
-        notes: appState.notes
+        notes: appState.notes,
+        sidebarCollapsed: appState.sidebarCollapsed
       }));
     } catch (e) {
       console.warn('Could not save study state to localStorage', e);
@@ -50,6 +50,8 @@
   }
 
   // DOM Elements
+  const sidebar = document.getElementById('sidebar');
+  const sidebarBackdrop = document.getElementById('sidebarBackdrop');
   const sidebarDocList = document.getElementById('sidebarDocList');
   const studyContainer = document.getElementById('studyContentContainer');
   const breadcrumbEl = document.getElementById('headerBreadcrumb');
@@ -60,9 +62,14 @@
   const modalSearchResults = document.getElementById('modalSearchResults');
   const progressFill = document.getElementById('sidebarProgressFill');
   const progressPercentText = document.getElementById('sidebarProgressText');
-  const tocSidebar = document.getElementById('tocSidebar');
-  const tocList = document.getElementById('tocList');
-  const sidebar = document.getElementById('sidebar');
+  const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+  const sidebarToggleText = document.getElementById('sidebarToggleText');
+
+  // Apply initial sidebar collapsed state on desktop
+  if (appState.sidebarCollapsed && window.innerWidth > 992) {
+    document.body.classList.add('sidebar-collapsed');
+    if (sidebarToggleText) sidebarToggleText.textContent = 'Show Modules';
+  }
 
   // =========================================================================
   // GLOBAL STATISTICS & PROGRESS
@@ -73,7 +80,6 @@
     const totalChecklists = meta.totalChecklists;
     const checkedCount = Object.values(appState.checklist).filter(Boolean).length;
 
-    // Weighted progress: 60% checklist items, 40% document mastered
     const chkRatio = totalChecklists > 0 ? (checkedCount / totalChecklists) : 0;
     const docRatio = totalDocs > 0 ? (masteredCount / totalDocs) : 0;
     const overallPct = Math.round((chkRatio * 0.6 + docRatio * 0.4) * 100);
@@ -81,7 +87,6 @@
     if (progressFill) progressFill.style.width = overallPct + '%';
     if (progressPercentText) progressPercentText.textContent = overallPct + '% Mastered';
 
-    // Update mastered checkmarks in sidebar
     document.querySelectorAll('.doc-item-link').forEach(link => {
       const docId = link.getAttribute('data-doc-id');
       if (appState.mastered[docId]) {
@@ -111,7 +116,6 @@
       );
     }
 
-    // Group by Category
     const groups = {};
     filtered.forEach(d => {
       if (!groups[d.categoryName]) groups[d.categoryName] = [];
@@ -142,7 +146,7 @@
               <span class="doc-item-title">${d.title}</span>
               <div class="doc-item-meta">
                 <span>${d.readTime}</span>
-                ${d.checklistCount ? `<span class="doc-item-chk-indicator">&bull; ${d.checklistCount} tasks</span>` : ''}
+                ${d.checklistCount ? `<span style="color:var(--accent-emerald);">&bull; ${d.checklistCount} tasks</span>` : ''}
               </div>
             </div>
           </a>
@@ -151,22 +155,24 @@
     }
 
     if (filtered.length === 0) {
-      html += `<div style="padding: 24px 12px; text-align: center; color: var(--text-soft); font-size: 13px;">No matching documents found.</div>`;
+      html += `<div style="padding: 24px 12px; text-align: center; color: var(--text-soft); font-size: 13px;">No matching modules found.</div>`;
     }
 
     sidebarDocList.innerHTML = html;
 
-    // Attach click listeners to links
     sidebarDocList.querySelectorAll('.doc-item-link').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const docId = link.getAttribute('data-doc-id');
         loadDocument(docId);
-        if (window.innerWidth <= 992 && sidebar) {
-          sidebar.classList.remove('open');
-        }
+        closeMobileSidebar();
       });
     });
+  }
+
+  function closeMobileSidebar() {
+    if (sidebar) sidebar.classList.remove('open');
+    if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');
   }
 
   // =========================================================================
@@ -176,14 +182,12 @@
     appState.currentDocId = 'overview';
     window.location.hash = 'overview';
 
-    // Update Header Breadcrumb
     breadcrumbEl.innerHTML = `
       <span>Atlas</span>
       <span class="sep">/</span>
       <strong>Executive Study Hub</strong>
     `;
 
-    // Header Actions
     actionBtnsEl.innerHTML = `
       <button class="header-btn" id="btnResetProgress" title="Reset Study Progress">
         <span>↺</span> <span>Reset Progress</span>
@@ -204,10 +208,6 @@
       }
     });
 
-    // Hide Table of Contents on Overview
-    if (tocSidebar) tocSidebar.style.display = 'none';
-
-    // Metrics & Counts
     const totalMastered = Object.values(appState.mastered).filter(Boolean).length;
     const totalChecklists = meta.totalChecklists;
     const checkedCount = Object.values(appState.checklist).filter(Boolean).length;
@@ -386,7 +386,6 @@
       </div>
 
       <div class="category-hub-grid">
-        <!-- Business Hub -->
         <div class="category-card">
           <div class="cat-card-header">
             <span class="cat-card-icon">🏛️</span>
@@ -399,20 +398,19 @@
           <div class="cat-doc-links">
             <a href="#biz-brand-strategy" class="cat-link-row" data-doc-id="biz-brand-strategy">
               <span>Brand Strategy &amp; Positioning</span>
-              <span class="arrow">→</span>
+              <span>→</span>
             </a>
             <a href="#biz-client-engagement" class="cat-link-row" data-doc-id="biz-client-engagement">
               <span>Client Engagement &amp; Delivery Framework</span>
-              <span class="arrow">→</span>
+              <span>→</span>
             </a>
             <a href="#biz-service-catalog" class="cat-link-row" data-doc-id="biz-service-catalog">
               <span>Client-Facing Service Catalog (3 Packages)</span>
-              <span class="arrow">→</span>
+              <span>→</span>
             </a>
           </div>
         </div>
 
-        <!-- Website Architecture Hub -->
         <div class="category-card">
           <div class="cat-card-header">
             <span class="cat-card-icon">🌐</span>
@@ -425,16 +423,15 @@
           <div class="cat-doc-links">
             <a href="#web-architecture" class="cat-link-row" data-doc-id="web-architecture">
               <span>Website Architecture &amp; UX Strategy</span>
-              <span class="arrow">→</span>
+              <span>→</span>
             </a>
             <a href="#web-style-guide" class="cat-link-row" data-doc-id="web-style-guide">
               <span>Visual Design &amp; Style Guide (Tokens &amp; Cadence)</span>
-              <span class="arrow">→</span>
+              <span>→</span>
             </a>
           </div>
         </div>
 
-        <!-- Page Blueprints Hub -->
         <div class="category-card" style="grid-column: span 2;">
           <div class="cat-card-header">
             <span class="cat-card-icon">📄</span>
@@ -445,13 +442,13 @@
           </div>
           <p class="cat-card-desc">Production copy, ASCII wireframes, responsive specifications, and conversion goals for all 7 website pages.</p>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px;">
-            <a href="#page-home" class="cat-link-row" data-doc-id="page-home"><span>Page 01: Home</span> <span class="arrow">→</span></a>
-            <a href="#page-about" class="cat-link-row" data-doc-id="page-about"><span>Page 02: About Us</span> <span class="arrow">→</span></a>
-            <a href="#page-services" class="cat-link-row" data-doc-id="page-services"><span>Page 03: Services (10 Pillars)</span> <span class="arrow">→</span></a>
-            <a href="#page-how-we-work" class="cat-link-row" data-doc-id="page-how-we-work"><span>Page 04: How We Work</span> <span class="arrow">→</span></a>
-            <a href="#page-who-we-serve" class="cat-link-row" data-doc-id="page-who-we-serve"><span>Page 05: Who We Serve</span> <span class="arrow">→</span></a>
-            <a href="#page-insights" class="cat-link-row" data-doc-id="page-insights"><span>Page 06: Insights</span> <span class="arrow">→</span></a>
-            <a href="#page-contact" class="cat-link-row" data-doc-id="page-contact"><span>Page 07: Contact &amp; Audit</span> <span class="arrow">→</span></a>
+            <a href="#page-home" class="cat-link-row" data-doc-id="page-home"><span>Page 01: Home</span> <span>→</span></a>
+            <a href="#page-about" class="cat-link-row" data-doc-id="page-about"><span>Page 02: About Us</span> <span>→</span></a>
+            <a href="#page-services" class="cat-link-row" data-doc-id="page-services"><span>Page 03: Services (10 Pillars)</span> <span>→</span></a>
+            <a href="#page-how-we-work" class="cat-link-row" data-doc-id="page-how-we-work"><span>Page 04: How We Work</span> <span>→</span></a>
+            <a href="#page-who-we-serve" class="cat-link-row" data-doc-id="page-who-we-serve"><span>Page 05: Who We Serve</span> <span>→</span></a>
+            <a href="#page-insights" class="cat-link-row" data-doc-id="page-insights"><span>Page 06: Insights</span> <span>→</span></a>
+            <a href="#page-contact" class="cat-link-row" data-doc-id="page-contact"><span>Page 07: Contact &amp; Audit</span> <span>→</span></a>
           </div>
         </div>
       </div>
@@ -459,7 +456,6 @@
 
     studyContainer.innerHTML = html;
 
-    // Attach click listeners to cards and node buttons
     studyContainer.querySelectorAll('[data-doc-id]').forEach(elem => {
       elem.addEventListener('click', (e) => {
         e.preventDefault();
@@ -490,11 +486,9 @@
     appState.currentDocId = doc.id;
     window.location.hash = doc.id;
 
-    // Scroll to top
     const scroller = document.querySelector('.study-scrollable');
     if (scroller) scroller.scrollTop = 0;
 
-    // Update Header Breadcrumb
     breadcrumbEl.innerHTML = `
       <a href="#overview" id="breadcrumbHome" style="color: var(--text-muted); text-decoration: none;">Atlas</a>
       <span class="sep">/</span>
@@ -507,18 +501,71 @@
       renderOverview();
     });
 
-    // Mastered State
     const isMastered = !!appState.mastered[doc.id];
 
-    // Header Actions
+    // In-Header Table of Contents Dropdown Popover
+    let tocDropdownHtml = '';
+    if (doc.toc && doc.toc.length > 0) {
+      tocDropdownHtml = `
+        <div class="toc-dropdown-wrap">
+          <button class="header-btn" id="btnTocDropdown">
+            <span>📑 Sections ▾</span>
+          </button>
+          <div class="toc-popover" id="tocPopover">
+            <div class="toc-popover-title">JUMP TO SECTION</div>
+            <ul class="toc-popover-list">
+              ${doc.toc.map(item => `
+                <li>
+                  <a href="#${item.anchor}" class="toc-popover-link level-${item.level}" data-anchor="${item.anchor}">
+                    ${item.text}
+                  </a>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+
     actionBtnsEl.innerHTML = `
+      ${tocDropdownHtml}
       <button class="header-btn ${isMastered ? 'active' : ''}" id="btnToggleMastered">
         <span>${isMastered ? '✓ Mastered' : '○ Mark as Mastered'}</span>
       </button>
-      <button class="header-btn" id="btnFocusMode" title="Toggle Fullscreen Reading">
-        <span>⛶ Focus</span>
+      <button class="header-btn primary" id="btnReaderSearch">
+        <span>🔍 Search</span>
       </button>
     `;
+
+    // Dropdown popover logic
+    const tocBtn = document.getElementById('btnTocDropdown');
+    const tocPopover = document.getElementById('tocPopover');
+    if (tocBtn && tocPopover) {
+      tocBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        tocPopover.classList.toggle('open');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!tocPopover.contains(e.target) && e.target !== tocBtn) {
+          tocPopover.classList.remove('open');
+        }
+      });
+
+      tocPopover.querySelectorAll('.toc-popover-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('data-anchor');
+          const targetEl = document.getElementById(targetId);
+          tocPopover.classList.remove('open');
+          if (targetEl && scroller) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    document.getElementById('btnReaderSearch')?.addEventListener('click', openSearchModal);
 
     document.getElementById('btnToggleMastered')?.addEventListener('click', () => {
       appState.mastered[doc.id] = !appState.mastered[doc.id];
@@ -526,44 +573,7 @@
       loadDocument(doc.id);
     });
 
-    document.getElementById('btnFocusMode')?.addEventListener('click', () => {
-      if (sidebar) sidebar.classList.toggle('open');
-    });
-
-    // Render Table of Contents
-    if (tocSidebar && doc.toc && doc.toc.length > 0) {
-      tocSidebar.style.display = 'block';
-      let tocHtml = `<div class="toc-title">ON THIS PAGE</div><ul class="toc-links-list">`;
-      doc.toc.forEach(item => {
-        tocHtml += `
-          <li>
-            <a href="#${item.anchor}" class="toc-link level-${item.level}" data-anchor="${item.anchor}">
-              ${item.text}
-            </a>
-          </li>
-        `;
-      });
-      tocHtml += `</ul>`;
-      tocList.innerHTML = tocHtml;
-
-      tocList.querySelectorAll('.toc-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('data-anchor');
-          const targetEl = document.getElementById(targetId);
-          if (targetEl && scroller) {
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
-    } else if (tocSidebar) {
-      tocSidebar.style.display = 'none';
-    }
-
-    // Parse Markdown Content
     const parsedHTML = parseMarkdownToHTML(doc.rawContent, doc.id);
-
-    // Document Takeaways Card
     const savedNotes = appState.notes[doc.id] || '';
 
     let html = `
@@ -586,21 +596,21 @@
         </div>
         <div class="takeaways-grid">
           <div class="takeaway-item">
-            <div class="takeaway-label">Module Classification</div>
+            <div class="takeaway-label">Classification</div>
             <div class="takeaway-value">${doc.tier}</div>
           </div>
           <div class="takeaway-item">
-            <div class="takeaway-label">Actionable Checklists</div>
-            <div class="takeaway-value">${doc.checklistCount} Implementation Tasks</div>
+            <div class="takeaway-label">Checklist Tasks</div>
+            <div class="takeaway-value">${doc.checklistCount} Implementation Items</div>
           </div>
           <div class="takeaway-item">
             <div class="takeaway-label">Mastery Status</div>
-            <div class="takeaway-value">${isMastered ? '<span style="color:var(--accent-emerald);">✓ Fully Mastered</span>' : 'In Study Review'}</div>
+            <div class="takeaway-value">${isMastered ? '<span style="color:var(--accent-emerald); font-weight:600;">✓ Fully Mastered</span>' : 'Pending Study'}</div>
           </div>
         </div>
       </div>
 
-      <!-- Full Rendered Content -->
+      <!-- High-Legibility Document Content -->
       <div class="markdown-body">
         ${parsedHTML}
       </div>
@@ -611,7 +621,7 @@
           <h4><span>📝</span> Personal Study Notes for this Module</h4>
           <span class="notes-save-status" id="notesSaveStatus">Saved</span>
         </div>
-        <textarea class="study-notes-textarea" id="moduleStudyNotes" placeholder="Write personal insights, questions, key takeaway formulas, or implementation notes here. Auto-saved to your browser.">${savedNotes}</textarea>
+        <textarea class="study-notes-textarea" id="moduleStudyNotes" placeholder="Write personal insights, formulas, or implementation notes here. Auto-saved in your browser.">${savedNotes}</textarea>
       </div>
 
       <!-- Bottom Document Pager -->
@@ -620,10 +630,8 @@
 
     studyContainer.innerHTML = html;
 
-    // Attach Checklist Listeners
     setupChecklistListeners(doc.id);
 
-    // Attach Notes Auto-Save
     const notesTextarea = document.getElementById('moduleStudyNotes');
     const notesStatus = document.getElementById('notesSaveStatus');
     if (notesTextarea) {
@@ -639,7 +647,6 @@
       });
     }
 
-    // Attach Copy Buttons for ASCII & Code Blocks
     setupCopyButtons();
 
     renderSidebar();
@@ -656,12 +663,12 @@
     const next = idx < documents.length - 1 ? documents[idx + 1] : null;
 
     return `
-      <div style="display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border-subtle); flex-wrap: wrap;">
+      <div style="display: flex; justify-content: space-between; gap: 16px; margin-top: 60px; padding-top: 36px; border-top: 1px solid var(--border-subtle); flex-wrap: wrap;">
         ${prev ? `
           <a href="#${prev.id}" class="header-btn" style="flex: 1; min-width: 200px; justify-content: flex-start; padding: 14px 18px;" onclick="window.loadDocById('${prev.id}'); return false;">
             <div style="text-align: left;">
-              <span style="font-size: 10.5px; text-transform: uppercase; color: var(--text-soft); display: block;">← Previous</span>
-              <strong style="color: var(--text-bright); font-size: 13px;">${prev.title}</strong>
+              <span style="font-size: 11px; text-transform: uppercase; color: var(--text-soft); display: block;">← Previous</span>
+              <strong style="color: var(--text-heading); font-size: 14px;">${prev.title}</strong>
             </div>
           </a>
         ` : '<div></div>'}
@@ -669,8 +676,8 @@
         ${next ? `
           <a href="#${next.id}" class="header-btn" style="flex: 1; min-width: 200px; justify-content: flex-end; padding: 14px 18px;" onclick="window.loadDocById('${next.id}'); return false;">
             <div style="text-align: right;">
-              <span style="font-size: 10.5px; text-transform: uppercase; color: var(--text-soft); display: block;">Next →</span>
-              <strong style="color: var(--text-bright); font-size: 13px;">${next.title}</strong>
+              <span style="font-size: 11px; text-transform: uppercase; color: var(--text-soft); display: block;">Next →</span>
+              <strong style="color: var(--text-heading); font-size: 14px;">${next.title}</strong>
             </div>
           </a>
         ` : '<div></div>'}
@@ -703,14 +710,11 @@
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
 
-      // Code Block Boundary
       if (line.trim().startsWith('```')) {
         if (!inCodeBlock) {
-          // Flush any list or table
           if (inList) { out.push(flushList(listBuffer)); inList = false; listBuffer = []; }
           if (inTable) { out.push(flushTable(tableBuffer)); inTable = false; tableBuffer = []; }
 
-          // Check if this is an ASCII diagram box
           const nextFew = lines.slice(i + 1, i + 6).join('\n');
           const isAsciiBox = /[┌┐└┘├┤─│═║╔╗╚╝]/.test(nextFew);
 
@@ -723,7 +727,6 @@
             codeBuffer = [];
           }
         } else {
-          // Closing code block
           inCodeBlock = false;
           out.push(renderCodeBlock(codeBuffer.join('\n'), codeLanguage));
           codeBuffer = [];
@@ -767,7 +770,7 @@
         continue;
       }
 
-      // Regular Table row
+      // Table row
       if (line.trim().startsWith('|') && line.trim().endsWith('|')) {
         if (inList) { out.push(flushList(listBuffer)); inList = false; listBuffer = []; }
         inTable = true;
@@ -779,7 +782,7 @@
         tableBuffer = [];
       }
 
-      // Unordered lists (- or *)
+      // Unordered lists
       if (/^\s*[-*]\s+/.test(line)) {
         if (inTable) { out.push(flushTable(tableBuffer)); inTable = false; tableBuffer = []; }
         inList = true;
@@ -811,7 +814,7 @@
 
       // Horizontal rules
       if (/^(\*\*\*|---|___)$/.test(line.trim())) {
-        out.push(`<hr style="border:none; border-top:1px solid var(--border-subtle); margin: 32px 0;">`);
+        out.push(`<hr>`);
         continue;
       }
 
@@ -837,7 +840,7 @@
       .replace(/>/g, '&gt;')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-family:var(--font-mono); font-size:12.5px; color:#a5f3fc;">$1</code>')
+      .replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px; font-family:var(--font-mono); font-size:13px; color:#deb57b;">$1</code>')
       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color:var(--accent-gold); text-decoration:underline; text-underline-offset:3px;" target="_blank">$1</a>');
   }
 
@@ -854,7 +857,6 @@
 
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
-      // Skip delimiter row like |---|---|
       if (/^\|[\s\-:|]+\|$/.test(row)) {
         isHeader = false;
         continue;
@@ -879,7 +881,7 @@
     return `
       <div class="ascii-diagram-card">
         <div class="ascii-header">
-          <span class="ascii-title">SYSTEM ARCHITECTURE BLUEPRINT</span>
+          <span class="ascii-title">ARCHITECTURE BLUEPRINT</span>
           <button class="copy-ascii-btn" data-clipboard-text="${encodeURIComponent(content)}">Copy Diagram</button>
         </div>
         <div class="ascii-body">${safeContent}</div>
@@ -987,7 +989,6 @@
       if (doc.tag.toLowerCase().includes(q)) score += 5;
       if (doc.tier.toLowerCase().includes(q)) score += 3;
 
-      // Scan content
       const lowerContent = doc.rawContent.toLowerCase();
       let pos = lowerContent.indexOf(q);
       let count = 0;
@@ -1042,6 +1043,24 @@
   // INITIALIZATION & EVENT LISTENERS
   // =========================================================================
   document.addEventListener('DOMContentLoaded', () => {
+    // Sidebar Collapsible Toggle (Desktop & Mobile)
+    sidebarToggleBtn?.addEventListener('click', () => {
+      if (window.innerWidth > 992) {
+        const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
+        appState.sidebarCollapsed = isCollapsed;
+        saveState();
+        if (sidebarToggleText) {
+          sidebarToggleText.textContent = isCollapsed ? 'Show Modules' : 'Hide Sidebar';
+        }
+      } else {
+        sidebar?.classList.toggle('open');
+        sidebarBackdrop?.classList.toggle('active');
+      }
+    });
+
+    document.getElementById('sidebarCloseBtn')?.addEventListener('click', closeMobileSidebar);
+    sidebarBackdrop?.addEventListener('click', closeMobileSidebar);
+
     // Category Filter Buttons
     document.querySelectorAll('.cat-pill').forEach(pill => {
       pill.addEventListener('click', () => {
@@ -1081,15 +1100,6 @@
         if (e.target === searchModal) closeSearchModal();
       });
     }
-
-    // Mobile Hamburger in Header
-    document.getElementById('menuToggleBtn')?.addEventListener('click', () => {
-      if (sidebar) sidebar.classList.toggle('open');
-    });
-
-    document.getElementById('sidebarCloseBtn')?.addEventListener('click', () => {
-      if (sidebar) sidebar.classList.remove('open');
-    });
 
     // Read URL Hash or default to Overview
     const hash = window.location.hash.replace('#', '');
