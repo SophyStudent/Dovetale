@@ -852,7 +852,7 @@
 
   function flushTable(rows) {
     if (!rows || rows.length < 2) return '';
-    let html = '<table>';
+    let html = '<div class="table-scroll-wrapper"><table>';
     let isHeader = true;
 
     for (let i = 0; i < rows.length; i++) {
@@ -872,7 +872,7 @@
         html += '</tr>';
       }
     }
-    html += '</tbody></table>';
+    html += '</tbody></table></div>';
     return html;
   }
 
