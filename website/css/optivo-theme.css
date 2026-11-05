@@ -1,0 +1,1587 @@
+/* ==========================================================================
+   OPTIVO CORPORATE CONSULTING - THEME STYLESHEET
+   Accurately synthesized for Structiva Business & Marketing Systems
+   Typography: Public Sans & Figtree
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --optivo-font-body: 'Figtree', sans-serif;
+  --optivo-font-heading: 'Public Sans', sans-serif;
+
+  /* Optivo Color Palette */
+  --optivo-primary: #1e60d5;
+  --optivo-primary-dark: #134db3;
+  --optivo-primary-rgb: 30, 96, 213;
+  --optivo-dark: #0e1828;
+  --optivo-dark-secondary: #16243d;
+  --optivo-text: #6e7787;
+  --optivo-text-dark: #0e1828;
+  --optivo-light: #f7f9fc;
+  --optivo-white: #ffffff;
+  --optivo-border: #e6ebf1;
+  --optivo-border-dark: #20314f;
+  --optivo-accent: #f4a434;
+  --optivo-badge-bg: #eef4ff;
+
+  /* Shadows */
+  --optivo-shadow-sm: 0 4px 12px rgba(14, 24, 40, 0.05);
+  --optivo-shadow-md: 0 10px 30px rgba(14, 24, 40, 0.08);
+  --optivo-shadow-lg: 0 20px 45px rgba(14, 24, 40, 0.12);
+  --optivo-shadow-hover: 0 25px 50px rgba(30, 96, 213, 0.15);
+
+  --optivo-radius-sm: 6px;
+  --optivo-radius-md: 12px;
+  --optivo-radius-lg: 20px;
+  --optivo-radius-xl: 30px;
+  --optivo-radius-full: 9999px;
+
+  --optivo-transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--optivo-font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--optivo-text);
+  background-color: var(--optivo-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--optivo-transition);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--optivo-font-heading);
+  color: var(--optivo-text-dark);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  margin-bottom: 16px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-space {
+  padding: 100px 0;
+}
+.section-space-top {
+  padding-top: 100px;
+}
+.section-space-bottom {
+  padding-bottom: 100px;
+}
+
+/* ==========================================================================
+   BUTTONS & BADGES
+   ========================================================================== */
+.optivo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--optivo-font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: var(--optivo-radius-full);
+  transition: var(--optivo-transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.optivo-btn-primary {
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  box-shadow: 0 8px 20px rgba(30, 96, 213, 0.25);
+}
+.optivo-btn-primary:hover {
+  background-color: var(--optivo-primary-dark);
+  color: var(--optivo-white);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(30, 96, 213, 0.35);
+}
+
+.optivo-btn-dark {
+  background-color: var(--optivo-dark);
+  color: var(--optivo-white);
+}
+.optivo-btn-dark:hover {
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  transform: translateY(-2px);
+}
+
+.optivo-btn-outline {
+  background-color: transparent;
+  color: var(--optivo-dark);
+  border-color: var(--optivo-border);
+}
+.optivo-btn-outline:hover {
+  border-color: var(--optivo-primary);
+  color: var(--optivo-primary);
+  background-color: var(--optivo-badge-bg);
+}
+
+.optivo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--optivo-font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--optivo-primary);
+  background-color: var(--optivo-badge-bg);
+  padding: 6px 16px;
+  border-radius: var(--optivo-radius-full);
+  margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   TOP UTILITY BAR (Optivo main-header-top)
+   ========================================================================== */
+.main-header-top {
+  background-color: var(--optivo-dark);
+  color: #9aa5b6;
+  font-size: 13px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.main-header-top__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header-top__list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.main-header-top__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-header-top__item a:hover {
+  color: var(--optivo-white);
+}
+
+.main-header-top__social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.main-header-top__social a {
+  color: #9aa5b6;
+  font-size: 14px;
+}
+.main-header-top__social a:hover {
+  color: var(--optivo-primary);
+}
+
+/* ==========================================================================
+   STICKY MAIN NAVIGATION (Optivo main-header)
+   ========================================================================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--optivo-white);
+  z-index: 999;
+  box-shadow: var(--optivo-shadow-sm);
+  transition: var(--optivo-transition);
+}
+
+.main-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 86px;
+}
+
+.main-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-title {
+  font-family: var(--optivo-font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--optivo-dark);
+}
+.brand-title span {
+  color: var(--optivo-primary);
+}
+
+.brand-desc {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--optivo-text);
+  display: block;
+  margin-top: -3px;
+}
+
+.main-header__nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.main-header__nav a {
+  font-family: var(--optivo-font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--optivo-dark);
+}
+.main-header__nav a:hover,
+.main-header__nav a.active {
+  color: var(--optivo-primary);
+}
+
+.main-header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   HOME SHOWCASE (Optivo Category Pill Strip)
+   ========================================================================== */
+.home-showcase {
+  background-color: var(--optivo-light);
+  border-bottom: 1px solid var(--optivo-border);
+  padding: 16px 0;
+}
+
+.home-showcase__inner {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.home-showcase__item {
+  background-color: var(--optivo-white);
+  border: 1px solid var(--optivo-border);
+  border-radius: var(--optivo-radius-md);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--optivo-font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--optivo-dark);
+  transition: var(--optivo-transition);
+}
+
+.home-showcase__item:hover,
+.home-showcase__item.active {
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  border-color: var(--optivo-primary);
+  box-shadow: 0 4px 15px rgba(30, 96, 213, 0.25);
+  transform: translateY(-2px);
+}
+
+.home-showcase__num {
+  font-size: 12px;
+  font-weight: 800;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   HERO FIVE (Optivo Corporate Consulting Hero)
+   ========================================================================== */
+.hero-five {
+  position: relative;
+  padding: 60px 0 90px;
+  background-color: #fbfcff;
+  overflow: hidden;
+}
+
+.hero-five__shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-five__title {
+  font-family: var(--optivo-font-heading);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--optivo-dark);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-five__title .logo {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 4px;
+}
+.hero-five__title .logo img {
+  height: 48px;
+  width: auto;
+}
+
+.hero-five__content__box {
+  display: grid;
+  grid-template-columns: 1.55fr 0.9fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* Hero Item One (Left Box with Image, Rotating Stamp, Video, Users) */
+.hero-five__item-one {
+  position: relative;
+  background-color: var(--optivo-white);
+  border-radius: var(--optivo-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-lg);
+  border: 1px solid var(--optivo-border);
+}
+
+.hero-five__item__content {
+  position: relative;
+  height: 100%;
+}
+
+.hero-five__item__shape img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* Rotating Round Stamp */
+.hero-three__round {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.hero-three__round .thumb {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: optivoSpin 14s linear infinite;
+}
+
+.hero-three__round .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-three__round .icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  border-radius: var(--optivo-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 15px rgba(30, 96, 213, 0.4);
+}
+
+@keyframes optivoSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Video Box Overlay */
+.hero-five__item__video {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 3;
+}
+
+.hero-five__item__video-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: rgba(14, 24, 40, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 12px 20px;
+  border-radius: var(--optivo-radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--optivo-white);
+  transition: var(--optivo-transition);
+}
+.hero-five__item__video-box:hover {
+  background-color: var(--optivo-primary);
+  transform: translateY(-2px);
+}
+
+.hero-five__item__video-box .icon {
+  width: 38px;
+  height: 38px;
+  background-color: var(--optivo-white);
+  color: var(--optivo-dark);
+  border-radius: var(--optivo-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.hero-five__item__video-box .text {
+  font-family: var(--optivo-font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Floating User Review Box */
+.hero-five__user {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color: var(--optivo-white);
+  padding: 16px 24px;
+  border-radius: var(--optivo-radius-md);
+  box-shadow: var(--optivo-shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 3;
+}
+
+.user-thumb {
+  display: flex;
+  align-items: center;
+}
+
+.user-thumb img {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--optivo-radius-full);
+  border: 3px solid var(--optivo-white);
+  margin-left: -12px;
+  object-fit: cover;
+}
+.user-thumb img:first-child {
+  margin-left: 0;
+}
+
+.hero-five__user_rm {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--optivo-radius-full);
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -12px;
+  border: 3px solid var(--optivo-white);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.user-info .title {
+  display: block;
+  font-family: var(--optivo-font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--optivo-dark);
+  line-height: 1.2;
+}
+
+.user-info .text {
+  font-size: 13px;
+  color: var(--optivo-text);
+}
+
+/* Tags in Hero */
+.hero-five__item__content .tag {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 10px 18px;
+  border-radius: var(--optivo-radius-full);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero-five__item__content .tag a {
+  font-family: var(--optivo-font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--optivo-dark);
+  background: #f1f4f9;
+  padding: 4px 10px;
+  border-radius: var(--optivo-radius-full);
+}
+
+/* Hero Item Two (Right Box: Tall Portrait Photo with Diagonal Arrow) */
+.hero-five__item-two {
+  position: relative;
+  background-color: var(--optivo-white);
+  border-radius: var(--optivo-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-lg);
+  border: 1px solid var(--optivo-border);
+}
+
+.hero-five__item__thumb {
+  position: relative;
+  height: 100%;
+}
+
+.hero-five__item__thumb img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.hero-five__item__thumb__link {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: var(--optivo-white);
+  color: var(--optivo-dark);
+  border-radius: var(--optivo-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: var(--optivo-shadow-md);
+  transition: var(--optivo-transition);
+}
+
+.hero-five__item__thumb__link:hover {
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   PARTNER LOGOS STRIP (Optivo barnds-one)
+   ========================================================================== */
+.barnds-one {
+  padding: 45px 0;
+  border-bottom: 1px solid var(--optivo-border);
+  position: relative;
+  background-color: var(--optivo-white);
+}
+
+.barnds-one__logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.barnds-one__img {
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: var(--optivo-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.barnds-one__img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: translateY(-2px);
+}
+
+.barnds-one__img img {
+  height: 38px;
+  width: auto;
+}
+
+/* ==========================================================================
+   SERVICE FIVE (Optivo 3-Card Large Photo Service Grid)
+   ========================================================================== */
+.service-five {
+  background-color: var(--optivo-light);
+  position: relative;
+}
+
+.service-five__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.service-five__title {
+  font-size: 38px;
+  font-weight: 800;
+  max-width: 760px;
+}
+
+.service-five__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-five__card {
+  background-color: var(--optivo-white);
+  border-radius: var(--optivo-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-md);
+  transition: var(--optivo-transition);
+  border: 1px solid var(--optivo-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-five__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--optivo-shadow-hover);
+  border-color: var(--optivo-primary);
+}
+
+.service-five__card__image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.service-five__card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-five__card:hover .service-five__card__image img {
+  transform: scale(1.08);
+}
+
+.service-five__card__content {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-five__card__category {
+  font-family: var(--optivo-font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--optivo-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.service-five__card__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.service-five__card__text {
+  font-size: 15px;
+  color: var(--optivo-text);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.service-five__card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 18px;
+  border-top: 1px solid var(--optivo-border);
+  font-family: var(--optivo-font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--optivo-dark);
+}
+
+.service-five__card__link span.arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--optivo-radius-full);
+  background-color: var(--optivo-badge-bg);
+  color: var(--optivo-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--optivo-transition);
+}
+
+.service-five__card:hover .service-five__card__link span.arrow-btn {
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   ABOUT & EXPERIENCE (Optivo main-about)
+   ========================================================================== */
+.main-about {
+  position: relative;
+  background-color: var(--optivo-white);
+}
+
+.main-about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.main-about__images {
+  position: relative;
+}
+
+.main-about__img-main {
+  border-radius: var(--optivo-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-lg);
+}
+.main-about__img-main img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.main-about__experience-badge {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  padding: 30px;
+  border-radius: var(--optivo-radius-md);
+  box-shadow: var(--optivo-shadow-lg);
+  border: 4px solid var(--optivo-white);
+  text-align: center;
+}
+
+.main-about__experience-num {
+  font-family: var(--optivo-font-heading);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.main-about__experience-text {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.main-about__content {
+  padding-left: 20px;
+}
+
+.main-about__title {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.main-about__feature-list {
+  list-style: none;
+  margin: 28px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.main-about__feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--optivo-font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--optivo-dark);
+}
+
+.main-about__feature-item span.icon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--optivo-badge-bg);
+  color: var(--optivo-primary);
+  border-radius: var(--optivo-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Progress Bars */
+.progress-box {
+  margin-bottom: 20px;
+}
+.progress-box__title {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--optivo-font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--optivo-dark);
+  margin-bottom: 8px;
+}
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background-color: var(--optivo-light);
+  border-radius: var(--optivo-radius-full);
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--optivo-primary);
+  border-radius: var(--optivo-radius-full);
+}
+
+/* ==========================================================================
+   METRIC COUNTER STRIP (Optivo skill-area)
+   ========================================================================== */
+.skill-area {
+  background-color: var(--optivo-dark);
+  color: var(--optivo-white);
+  padding: 70px 0;
+}
+
+.metric-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.metric-strip-card {
+  padding: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.metric-strip-card:last-child {
+  border-right: none;
+}
+
+.metric-strip-num {
+  font-family: var(--optivo-font-heading);
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--optivo-primary);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.metric-strip-label {
+  font-family: var(--optivo-font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--optivo-white);
+  margin-bottom: 4px;
+}
+
+.metric-strip-desc {
+  font-size: 13px;
+  color: #9aa5b6;
+}
+
+/* ==========================================================================
+   WHY CHOOSE US (Optivo why-choose-five)
+   ========================================================================== */
+.why-choose-five {
+  background-color: var(--optivo-light);
+}
+
+.why-choose-five__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.why-choose-items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.why-choose-item {
+  background-color: var(--optivo-white);
+  border-radius: var(--optivo-radius-md);
+  padding: 28px;
+  border: 1px solid var(--optivo-border);
+  box-shadow: var(--optivo-shadow-sm);
+  transition: var(--optivo-transition);
+}
+.why-choose-item:hover {
+  border-color: var(--optivo-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--optivo-shadow-md);
+}
+
+.why-choose-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--optivo-radius-md);
+  background-color: var(--optivo-badge-bg);
+  color: var(--optivo-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.why-choose-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.why-choose-desc {
+  font-size: 14px;
+  color: var(--optivo-text);
+  line-height: 1.55;
+}
+
+.why-choose-thumb {
+  border-radius: var(--optivo-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-lg);
+}
+.why-choose-thumb img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   WORKING PROCESS (Optivo working-process-three-area)
+   ========================================================================== */
+.working-process {
+  background-color: var(--optivo-white);
+}
+
+.process-grid-four {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.process-card-optivo {
+  background-color: var(--optivo-light);
+  border: 1px solid var(--optivo-border);
+  border-radius: var(--optivo-radius-lg);
+  padding: 36px 28px;
+  position: relative;
+  transition: var(--optivo-transition);
+}
+
+.process-card-optivo:hover {
+  background-color: var(--optivo-white);
+  border-color: var(--optivo-primary);
+  transform: translateY(-5px);
+  box-shadow: var(--optivo-shadow-md);
+}
+
+.process-step-num {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--optivo-radius-full);
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  font-family: var(--optivo-font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.process-step-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.process-step-desc {
+  font-size: 14px;
+  color: var(--optivo-text);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   CASE STUDIES SHOWCASE (Optivo case-study-five)
+   ========================================================================== */
+.case-study-five {
+  background-color: var(--optivo-light);
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.case-study-card {
+  background-color: var(--optivo-white);
+  border-radius: var(--optivo-radius-md);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-sm);
+  transition: var(--optivo-transition);
+  border: 1px solid var(--optivo-border);
+}
+.case-study-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--optivo-shadow-hover);
+  border-color: var(--optivo-primary);
+}
+
+.case-study-img {
+  height: 220px;
+  overflow: hidden;
+}
+.case-study-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.case-study-card:hover .case-study-img img {
+  transform: scale(1.08);
+}
+
+.case-study-info {
+  padding: 24px;
+}
+.case-study-cat {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--optivo-primary);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.case-study-title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   PRICING AREA (Optivo pricing-area-two)
+   ========================================================================== */
+.pricing-area {
+  background-color: var(--optivo-white);
+}
+
+.pricing-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.pricing-card-optivo {
+  background-color: var(--optivo-white);
+  border: 1px solid var(--optivo-border);
+  border-radius: var(--optivo-radius-lg);
+  padding: 44px 36px;
+  box-shadow: var(--optivo-shadow-sm);
+  transition: var(--optivo-transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card-optivo:hover,
+.pricing-card-optivo.featured {
+  border-color: var(--optivo-primary);
+  box-shadow: var(--optivo-shadow-hover);
+  transform: translateY(-6px);
+}
+
+.pricing-badge-popular {
+  position: absolute;
+  top: -14px;
+  right: 28px;
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  font-family: var(--optivo-font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: var(--optivo-radius-full);
+}
+
+.pricing-plan-name {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.pricing-plan-desc {
+  font-size: 14px;
+  color: var(--optivo-text);
+  margin-bottom: 24px;
+}
+
+.pricing-plan-features {
+  list-style: none;
+  margin: 24px 0;
+  flex-grow: 1;
+}
+.pricing-plan-features li {
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pricing-plan-features li::before {
+  content: '✓';
+  color: var(--optivo-primary);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   TEAM AREA (Optivo team-area-two)
+   ========================================================================== */
+.team-area {
+  background-color: var(--optivo-light);
+}
+
+.team-grid-four {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.team-card-optivo {
+  background-color: var(--optivo-white);
+  border-radius: var(--optivo-radius-md);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-sm);
+  border: 1px solid var(--optivo-border);
+  transition: var(--optivo-transition);
+  text-align: center;
+}
+.team-card-optivo:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--optivo-shadow-md);
+  border-color: var(--optivo-primary);
+}
+
+.team-photo {
+  height: 280px;
+  overflow: hidden;
+}
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.team-card-optivo:hover .team-photo img {
+  transform: scale(1.06);
+}
+
+.team-info {
+  padding: 24px 20px;
+}
+.team-name {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.team-role {
+  font-size: 13px;
+  color: var(--optivo-primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   TESTIMONIALS (Optivo testimonials-five)
+   ========================================================================== */
+.testimonials-five {
+  background-color: var(--optivo-white);
+}
+
+.testimonials-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial-card-optivo {
+  background-color: var(--optivo-light);
+  border: 1px solid var(--optivo-border);
+  border-radius: var(--optivo-radius-lg);
+  padding: 36px 30px;
+  box-shadow: var(--optivo-shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-stars {
+  color: #ffb703;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.testimonial-quote {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--optivo-dark);
+  font-style: italic;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--optivo-radius-full);
+  object-fit: cover;
+}
+.testimonial-author-name {
+  font-family: var(--optivo-font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--optivo-dark);
+  line-height: 1.2;
+}
+.testimonial-author-role {
+  font-size: 12px;
+  color: var(--optivo-text);
+}
+
+/* ==========================================================================
+   BLOG / JOURNAL (Optivo blog-two)
+   ========================================================================== */
+.blog-two {
+  background-color: var(--optivo-light);
+}
+
+.blog-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.blog-card-optivo {
+  background-color: var(--optivo-white);
+  border-radius: var(--optivo-radius-md);
+  overflow: hidden;
+  box-shadow: var(--optivo-shadow-sm);
+  border: 1px solid var(--optivo-border);
+  transition: var(--optivo-transition);
+}
+.blog-card-optivo:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--optivo-shadow-hover);
+  border-color: var(--optivo-primary);
+}
+
+.blog-thumb {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+.blog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.blog-card-optivo:hover .blog-thumb img {
+  transform: scale(1.08);
+}
+
+.blog-content {
+  padding: 28px 24px;
+}
+.blog-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--optivo-primary);
+  margin-bottom: 8px;
+}
+.blog-title {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.blog-link {
+  font-family: var(--optivo-font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--optivo-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.blog-card-optivo:hover .blog-link {
+  color: var(--optivo-primary);
+}
+
+/* ==========================================================================
+   FOOTER (Optivo main-footer)
+   ========================================================================== */
+.main-footer {
+  background-color: var(--optivo-dark);
+  color: #9aa5b6;
+  padding: 80px 0 30px;
+}
+
+.footer-newsletter-box {
+  background-color: var(--optivo-dark-secondary);
+  border: 1px solid var(--optivo-border-dark);
+  border-radius: var(--optivo-radius-lg);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 30px;
+}
+
+.newsletter-title {
+  color: var(--optivo-white);
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.newsletter-desc {
+  font-size: 14px;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 440px;
+  width: 100%;
+}
+.newsletter-input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: var(--optivo-radius-full) 0 0 var(--optivo-radius-full);
+  border: 1px solid var(--optivo-border-dark);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--optivo-white);
+  outline: none;
+  font-family: var(--optivo-font-body);
+}
+.newsletter-btn {
+  background-color: var(--optivo-primary);
+  color: var(--optivo-white);
+  border: none;
+  padding: 0 24px;
+  border-radius: 0 var(--optivo-radius-full) var(--optivo-radius-full) 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.footer-grid-four {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-col-title {
+  color: var(--optivo-white);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+.footer-links li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.footer-links a:hover {
+  color: var(--optivo-white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-five__content__box {
+    grid-template-columns: 1fr;
+  }
+  .home-showcase__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .service-five__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main-about__grid {
+    grid-template-columns: 1fr;
+  }
+  .metric-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .case-study-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing-grid-three {
+    grid-template-columns: 1fr;
+  }
+  .team-grid-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .testimonials-grid-three {
+    grid-template-columns: 1fr;
+  }
+  .blog-grid-three {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header-top {
+    display: none;
+  }
+  .hero-five__title {
+    font-size: 38px;
+  }
+  .home-showcase__inner {
+    grid-template-columns: 1fr;
+  }
+  .service-five__grid {
+    grid-template-columns: 1fr;
+  }
+  .why-choose-five__grid {
+    grid-template-columns: 1fr;
+  }
+  .why-choose-items-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-grid-four {
+    grid-template-columns: 1fr;
+  }
+  .metric-strip-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-grid-four {
+    grid-template-columns: 1fr;
+  }
+  .footer-newsletter-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-grid-four {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .main-header__nav {
+    display: none;
+  }
+}

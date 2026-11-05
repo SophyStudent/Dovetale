@@ -1,0 +1,844 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root {
+  --primary-navy: #0e1828;
+  --deep-navy: #080f1a;
+  --dark-surface: #16243d;
+  --teal-accent: #1e60d5;
+  --teal-accent-hover: #134db3;
+  --teal-glow: rgba(30, 96, 213, 0.25);
+  --bg-light: #f7f9fc;
+  --surface-white: #ffffff;
+  --text-dark: #0e1828;
+  --text-muted: #6e7787;
+  --text-light: #ffffff;
+  --border-dark: #20314f;
+  --border-light: #e6ebf1;
+  --font-heading: 'Public Sans', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --container-max: 1240px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 18px rgba(14, 24, 40, 0.06);
+  --shadow-hover: 0 20px 35px rgba(30, 96, 213, 0.14);
+  --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--surface-white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   TOP UTILITY BAR (Optivo Pattern)
+   ========================================================================== */
+.top-utility-bar {
+  background-color: var(--deep-navy);
+  color: #94a3b8;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-dark);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.top-bar-left, .top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-bar-tag {
+  color: var(--teal-accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  background: rgba(22, 184, 166, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(22, 184, 166, 0.2);
+}
+
+.top-bar-link:hover {
+  color: var(--text-light);
+}
+
+/* ==========================================================================
+   STICKY HEADER & NAVIGATION
+   ========================================================================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(16, 29, 53, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--teal-accent), #0d9488);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--surface-white);
+  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  box-shadow: 0 0 15px var(--teal-glow);
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-light);
+  letter-spacing: -0.02em;
+}
+
+.logo-subtext {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  display: block;
+  margin-top: -3px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-link {
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--surface-white);
+}
+
+.nav-link.active::after, .nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--teal-accent);
+  border-radius: 2px;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   BUTTONS & BADGES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--teal-accent);
+  color: var(--surface-white);
+  border-color: var(--teal-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--teal-accent-hover);
+  box-shadow: 0 0 20px rgba(22, 184, 166, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--surface-white);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--surface-white);
+}
+
+.btn-dark {
+  background-color: var(--primary-navy);
+  color: var(--surface-white);
+}
+
+.btn-dark:hover {
+  background-color: var(--deep-navy);
+  transform: translateY(-1px);
+}
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+}
+
+.pill-teal {
+  background-color: rgba(22, 184, 166, 0.12);
+  color: var(--teal-accent);
+  border: 1px solid rgba(22, 184, 166, 0.25);
+}
+
+.pill-navy {
+  background-color: rgba(16, 29, 53, 0.06);
+  color: var(--primary-navy);
+  border: 1px solid rgba(16, 29, 53, 0.12);
+}
+
+/* ==========================================================================
+   HERO SECTION (Leroux Split-Composition)
+   ========================================================================== */
+.hero-section {
+  background-color: var(--primary-navy);
+  color: var(--surface-white);
+  padding: 90px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(22, 184, 166, 0.15) 0%, rgba(16, 29, 53, 0) 70%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  color: var(--surface-white);
+}
+
+.hero-narrative {
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-canvas-wrap {
+  width: 100%;
+  height: 440px;
+  background: var(--dark-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-dark);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+#networkCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   METRIC COUNTER STRIP (Optivo Pattern)
+   ========================================================================== */
+.metric-strip-section {
+  background-color: #0e172b;
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 40px 0;
+  color: var(--surface-white);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.metric-card {
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metric-card:last-child {
+  border-right: none;
+}
+
+.metric-val {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--teal-accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   SECTION COMMON STYLES
+   ========================================================================== */
+.section-py {
+  padding: 100px 0;
+}
+
+.section-bg-light {
+  background-color: var(--bg-light);
+}
+
+.section-bg-navy {
+  background-color: var(--primary-navy);
+  color: var(--surface-white);
+}
+
+.section-bg-white {
+  background-color: var(--surface-white);
+}
+
+.section-header-block {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+.section-bg-navy .section-title {
+  color: var(--surface-white);
+}
+
+.section-bg-navy .section-subtitle {
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   CHALLENGES SECTION (Optivo Problem Cards)
+   ========================================================================== */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.challenge-card {
+  background-color: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+}
+
+.challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cbd5e1;
+}
+
+.challenge-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.challenge-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.challenge-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.challenges-takeaway-banner {
+  margin-top: 48px;
+  background: #ffffff;
+  border-left: 4px solid var(--teal-accent);
+  border-radius: var(--radius-sm);
+  padding: 24px 32px;
+  box-shadow: var(--shadow-card);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   THE 10 PILLARS GRID (Leroux Modular Cards)
+   ========================================================================== */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pillar-card {
+  background-color: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--teal-accent);
+}
+
+.pillar-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.pillar-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.pillar-link {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pillar-card:hover .pillar-link {
+  color: var(--teal-accent);
+}
+
+/* ==========================================================================
+   PROCESS ROADMAP (Optivo 01 to 05)
+   ========================================================================== */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.roadmap-card {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.roadmap-card:hover {
+  background-color: var(--surface-white);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--teal-accent);
+}
+
+.roadmap-num {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  color: #cbd5e1;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.roadmap-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.roadmap-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   TARGET AUDIENCE CARDS (Who We Serve)
+   ========================================================================== */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.audience-card {
+  background-color: var(--surface-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.audience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--teal-accent);
+}
+
+.audience-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.audience-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   CLOSING CONSULTATION BANNER
+   ========================================================================== */
+.closing-banner-section {
+  background-color: var(--primary-navy);
+  color: var(--surface-white);
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.closing-banner-inner {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.closing-banner-title {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.closing-banner-text {
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+
+.closing-banner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.main-footer {
+  background-color: var(--deep-navy);
+  color: #94a3b8;
+  padding: 80px 0 30px;
+  border-top: 1px solid var(--border-dark);
+  font-size: 14px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.footer-brand p {
+  margin-top: 16px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--surface-white);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a:hover {
+  color: var(--teal-accent);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-dark);
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   FORM & TABLE STYLES
+   ========================================================================== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--teal-accent);
+  box-shadow: 0 0 0 3px var(--teal-glow);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 18px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.comparison-table th {
+  background-color: var(--primary-navy);
+  color: var(--surface-white);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-canvas-wrap {
+    height: 360px;
+  }
+  .challenges-grid, .pillars-grid, .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .roadmap-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-utility-bar {
+    display: none;
+  }
+  .hero-title {
+    font-size: 38px;
+  }
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .metric-card {
+    border-right: none;
+  }
+  .challenges-grid, .pillars-grid, .audience-grid, .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .nav-menu {
+    display: none; /* Can be toggled with JS mobile drawer */
+  }
+}
