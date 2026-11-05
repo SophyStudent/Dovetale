@@ -2085,7 +2085,7 @@ footer span {
 
 .master-dossier-console {
   display: grid;
-  grid-template-columns: 370px 1fr;
+  grid-template-columns: 410px 1fr;
   gap: 40px;
   align-items: start;
 }
@@ -2094,29 +2094,29 @@ footer span {
 .dossier-sidebar {
   background: #1b262b;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 28px 24px 32px;
+  padding: 30px 24px 34px;
 }
 
 .dossier-sidebar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 16px;
+  padding-bottom: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .index-title {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   color: #c99a5e;
   font-family: 'DM Mono', monospace, ui-monospace;
 }
 
 .module-count {
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.12em;
-  color: #627880;
+  color: #728b94;
   font-family: 'DM Mono', monospace, ui-monospace;
 }
 
@@ -2124,54 +2124,55 @@ footer span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: #5a7078;
+  color: #69838c;
   font-family: 'DM Mono', monospace, ui-monospace;
-  margin: 22px 0 8px;
+  margin: 24px 0 10px;
   text-transform: uppercase;
 }
 
 .tier-badge {
-  color: #5a7078;
+  color: #69838c;
 }
 
 .dossier-nav-btn {
   width: 100%;
   display: grid;
-  grid-template-columns: 24px 1fr 16px;
+  grid-template-columns: 28px 1fr 20px;
   gap: 12px;
   align-items: center;
-  padding: 12px 14px;
+  padding: 13px 16px;
   background: transparent;
   border: none;
   border-radius: 2px;
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   font-family: inherit;
 }
 
 .dossier-nav-btn .p-num {
-  font-size: 11.5px;
+  font-size: 13.5px;
   font-family: 'DM Mono', monospace, ui-monospace;
-  color: #5a7078;
+  color: #69838c;
+  font-weight: 500;
   transition: color 0.2s;
 }
 
 .dossier-nav-btn .p-name {
-  font-size: 13px;
-  color: #9bb0b6;
+  font-size: 15px;
+  color: #b2c5cb;
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.4;
   transition: all 0.2s;
 }
 
 .dossier-nav-btn .p-arrow {
-  font-size: 13px;
-  color: #5a7078;
+  font-size: 16px;
+  color: #69838c;
   transition: all 0.2s;
   text-align: right;
 }
@@ -2194,14 +2195,21 @@ footer span {
   background: #c99a5e;
 }
 
-.dossier-nav-btn.active .p-num,
-.dossier-nav-btn.active .p-name,
-.dossier-nav-btn.active .p-arrow {
+.dossier-nav-btn.active .p-num {
   color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.dossier-nav-btn.active .p-name {
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .dossier-nav-btn.active .p-arrow {
+  color: #ffffff;
+  font-size: 16px;
   transform: translateX(2px);
 }
 
