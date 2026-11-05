@@ -358,9 +358,56 @@ document.addEventListener('DOMContentLoaded', function () {
           if (fidelityEl) fidelityEl.textContent = data.fidelity;
           if (specIdEl) specIdEl.textContent = data.specId;
           displayCard.style.opacity = '1';
+          updateCardNav(pillarId);
         }, 120);
       });
     });
+
+    // In-Card Prev / Next Navigation for mobile & desktop UX
+    const prevBtn = document.getElementById('dossier-prev-btn');
+    const nextBtn = document.getElementById('dossier-next-btn');
+    const prevTitleEl = document.getElementById('dossier-prev-title');
+    const nextTitleEl = document.getElementById('dossier-next-title');
+    const trackerCurrEl = document.getElementById('dossier-tracker-curr');
+
+    const pillarKeys = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'];
+
+    function updateCardNav(currentId) {
+      const idx = pillarKeys.indexOf(currentId);
+      if (idx === -1) return;
+
+      const prevIdx = (idx - 1 + pillarKeys.length) % pillarKeys.length;
+      const nextIdx = (idx + 1) % pillarKeys.length;
+
+      const prevKey = pillarKeys[prevIdx];
+      const nextKey = pillarKeys[nextIdx];
+
+      if (trackerCurrEl) trackerCurrEl.textContent = currentId;
+      if (prevTitleEl) prevTitleEl.textContent = prevKey + '. ' + pillarsData[prevKey].title.split('&')[0].trim();
+      if (nextTitleEl) nextTitleEl.textContent = nextKey + '. ' + pillarsData[nextKey].title.split('&')[0].trim();
+
+      if (prevBtn) prevBtn.setAttribute('data-target-pillar', prevKey);
+      if (nextBtn) nextBtn.setAttribute('data-target-pillar', nextKey);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        const target = this.getAttribute('data-target-pillar') || '10';
+        const targetNavBtn = dossierConsole.querySelector('.dossier-nav-btn[data-pillar="' + target + '"]');
+        if (targetNavBtn) targetNavBtn.click();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        const target = this.getAttribute('data-target-pillar') || '02';
+        const targetNavBtn = dossierConsole.querySelector('.dossier-nav-btn[data-pillar="' + target + '"]');
+        if (targetNavBtn) targetNavBtn.click();
+      });
+    }
+
+    // Initialize nav for initial pillar 01
+    updateCardNav('01');
   }
 
 });

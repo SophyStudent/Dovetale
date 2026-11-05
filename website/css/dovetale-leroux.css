@@ -2358,3 +2358,105 @@ footer span {
     gap: 10px;
   }
 }
+
+/* ==========================================================================
+   DOSSIER CARD MOBILE & DESKTOP PAGINATION NAVIGATION
+   ========================================================================== */
+.dossier-card-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  margin: 10px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 16px;
+}
+
+.dossier-nav-arrow-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 18px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  text-align: left;
+}
+
+.dossier-nav-arrow-btn:hover {
+  background: rgba(201, 154, 94, 0.15);
+  border-color: #c99a5e;
+  transform: translateY(-1px);
+}
+
+.dossier-nav-arrow-btn .nav-arrow-icon {
+  font-size: 18px;
+  color: #c99a5e;
+  line-height: 1;
+}
+
+.dossier-nav-arrow-btn .nav-arrow-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dossier-nav-arrow-btn .nav-arrow-label small {
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  font-family: 'DM Mono', monospace, ui-monospace;
+  color: #728b94;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.dossier-nav-arrow-btn .nav-arrow-label strong {
+  font-size: 13.5px;
+  color: #d1e2e7;
+  font-weight: 500;
+  white-space: nowrap;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dossier-nav-arrow-btn .nav-arrow-label.right {
+  text-align: right;
+}
+
+.dossier-nav-tracker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace, ui-monospace;
+  font-size: 14px;
+}
+
+.dossier-nav-tracker .curr-pill {
+  color: #c99a5e;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.dossier-nav-tracker .tracker-div {
+  color: #556b73;
+}
+
+.dossier-nav-tracker .total-pill {
+  color: #728b94;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .dossier-nav-arrow-btn .nav-arrow-label strong {
+    display: none;
+  }
+  .dossier-nav-arrow-btn {
+    padding: 10px 14px;
+  }
+}
