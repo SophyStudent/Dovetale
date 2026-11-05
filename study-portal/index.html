@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Dovetale Knowledge OS — Executive Study Atlas</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- =========================================================================
+         LEFT SIDEBAR: NAVIGATION, CURRICULUM & SEARCH
+         ========================================================================= -->
+    <aside class="sidebar" id="sidebar">
+      
+      <!-- Brand Header -->
+      <div class="sidebar-header">
+        <a href="#overview" class="brand-badge" onclick="window.loadDocById('overview'); return false;">
+          <div class="brand-logo-icon">D</div>
+          <div class="brand-text">
+            <h1>DOVETALE</h1>
+            <span>Knowledge OS &bull; Atlas</span>
+          </div>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close sidebar">&times;</button>
+      </div>
+
+      <!-- Global Study Progress Stats -->
+      <div class="sidebar-stats">
+        <div class="stats-row">
+          <span>Curriculum Mastery</span>
+          <strong id="sidebarProgressText">0% Mastered</strong>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="sidebarProgressFill"></div>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="sidebar-search">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="sidebarSearchInput" placeholder="Quick filter modules..." autocomplete="off">
+          <span class="search-shortcut">⌘K</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-filter">
+        <button class="cat-pill active" data-cat="all">All (22)</button>
+        <button class="cat-pill" data-cat="pillars">⚡ Pillars (10)</button>
+        <button class="cat-pill" data-cat="business">🏛️ Business (3)</button>
+        <button class="cat-pill" data-cat="architecture">🌐 Architecture (2)</button>
+        <button class="cat-pill" data-cat="pages">📄 Pages (7)</button>
+      </div>
+
+      <!-- Scrollable Document Tree List -->
+      <div class="sidebar-doc-list" id="sidebarDocList">
+        <!-- Rendered dynamically by portal-engine.js -->
+      </div>
+
+    </aside>
+
+    <!-- =========================================================================
+         MAIN APPLICATION AREA
+         ========================================================================= -->
+    <main class="main-wrapper">
+
+      <!-- Top Executive App Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="header-breadcrumb" id="headerBreadcrumb">
+            <span>Atlas</span>
+            <span class="sep">/</span>
+            <strong>Executive Study Hub</strong>
+          </div>
+        </div>
+
+        <div class="header-actions" id="headerActions">
+          <!-- Dynamically populated (e.g. Mastered toggle, Search, Focus mode) -->
+        </div>
+      </header>
+
+      <!-- Study Viewport: Content + Table of Contents -->
+      <div class="study-viewport">
+
+        <!-- Scrollable Document Reader -->
+        <div class="study-scrollable">
+          <div class="study-content-container" id="studyContentContainer">
+            <!-- Dynamically populated by portal-engine.js -->
+          </div>
+        </div>
+
+        <!-- Sticky Right Table of Contents (Desktop) -->
+        <aside class="toc-sidebar" id="tocSidebar" style="display: none;">
+          <div id="tocList">
+            <!-- Dynamically populated with headings -->
+          </div>
+        </aside>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- =========================================================================
+       GLOBAL INSTANT SEARCH MODAL (Ctrl + K)
+       ========================================================================= -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop">
+    <div class="search-modal">
+      <div class="search-modal-header">
+        <span style="color: var(--accent-gold); font-size: 18px;">🔍</span>
+        <input type="text" class="modal-search-input" id="modalSearchInput" placeholder="Search across all 22 documents and 47,000+ words..." autocomplete="off">
+        <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      </div>
+      <div class="search-modal-results" id="modalSearchResults">
+        <!-- Live search results appear here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Data & Engine Scripts -->
+  <script src="study-data.js"></script>
+  <script src="portal-engine.js"></script>
+
+</body>
+</html>

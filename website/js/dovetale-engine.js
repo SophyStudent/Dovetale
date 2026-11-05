@@ -205,29 +205,60 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+    // =========================================================================
+  // 4. STICKY HEADER & MOBILE NAVIGATION ENGINE
   // =========================================================================
-  // 4. MOBILE MENU TRIGGER
-  // =========================================================================
+  const siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    const handleScroll = () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollY > 40) {
+        siteHeader.classList.add('is-scrolled');
+      } else {
+        siteHeader.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
   const menuTrigger = document.querySelector('.menu-trigger');
   const nav = document.querySelector('.navigation nav');
 
   if (menuTrigger && nav) {
-    menuTrigger.addEventListener('click', () => {
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
+    menuTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = nav.classList.contains('mobile-open');
+
+      if (isOpen) {
+        nav.classList.remove('mobile-open');
+        menuTrigger.classList.remove('active');
+        menuTrigger.setAttribute('aria-expanded', 'false');
       } else {
-        nav.style.display = 'flex';
-        nav.style.flexDirection = 'column';
-        nav.style.position = 'absolute';
-        nav.style.top = '100%';
-        nav.style.left = '0';
-        nav.style.width = '100%';
-        nav.style.background = '#20282d';
-        nav.style.padding = '24px 40px';
-        nav.style.gap = '20px';
-        nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
-        nav.style.zIndex = '9999';
+        nav.classList.add('mobile-open');
+        menuTrigger.classList.add('active');
+        menuTrigger.setAttribute('aria-expanded', 'true');
       }
+    });
+
+    // Close when tapping anywhere outside
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !menuTrigger.contains(e.target)) {
+        if (nav.classList.contains('mobile-open')) {
+          nav.classList.remove('mobile-open');
+          menuTrigger.classList.remove('active');
+          menuTrigger.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+
+    // Close when clicking any nav link
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('mobile-open');
+        menuTrigger.classList.remove('active');
+        menuTrigger.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
