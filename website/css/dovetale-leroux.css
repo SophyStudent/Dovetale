@@ -2988,3 +2988,396 @@ footer span {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   COMPREHENSIVE GLOBAL RESPONSIVENESS SUITE (ALL BREAKPOINTS 320px - 1200px)
+   ========================================================================== */
+
+/* Fluid Base & Layout Safety */
+img, picture, svg, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navigation {
+  position: relative;
+}
+
+/* Contact Split Section Responsive */
+.contact-split-section {
+  background: #ffffff;
+  padding: 100px 4.17vw;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* --- TABLET LANDSCAPE & LAPTOPS (max-width: 1100px) --- */
+@media (max-width: 1100px) {
+  .hero-copy {
+    width: 65%;
+    padding: 160px 4% 120px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 54px);
+  }
+  .solutions {
+    gap: 24px;
+    padding: 80px 4.17vw;
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 24px;
+  }
+  .contact-split-section {
+    gap: 48px;
+    padding: 80px 4.17vw;
+  }
+}
+
+/* --- TABLETS PORTRAIT (max-width: 992px) --- */
+@media (max-width: 992px) {
+  .navigation nav {
+    display: none;
+  }
+  .menu-trigger {
+    display: block !important;
+  }
+  .contact-split-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 70px 4.17vw;
+  }
+  .master-dossier-console {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .dossier-sidebar {
+    width: 100%;
+  }
+  .expertise {
+    grid-template-columns: 1fr;
+  }
+  .sticky-photo {
+    position: relative;
+    height: 420px;
+  }
+  .expertise-copy {
+    padding: 60px 5%;
+  }
+  .process {
+    grid-template-columns: 1fr;
+  }
+  .process > img {
+    height: 380px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .process > div {
+    padding: 60px 5%;
+  }
+  .growth {
+    height: auto;
+    min-height: 480px;
+    margin-left: 0;
+    padding: 60px 4.17vw;
+  }
+  .growth > div {
+    width: 100%;
+    padding: 40px 30px;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .principles-manifesto-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .process-stages-grid,
+  .sectors-stages-grid,
+  .whitepapers-stages-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .service-strip {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 0 4.17vw;
+    padding: 40px 0 60px;
+  }
+  .professionals {
+    grid-template-columns: 1fr;
+    padding: 60px 4.17vw 30px;
+    gap: 30px;
+  }
+}
+
+/* --- MOBILE PHONES & PHABLETS (max-width: 768px) --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(30px, 8vw, 42px) !important;
+    line-height: 1.18 !important;
+  }
+  h2 {
+    font-size: clamp(26px, 6vw, 34px) !important;
+    line-height: 1.2 !important;
+  }
+  h3 {
+    font-size: clamp(22px, 5vw, 28px) !important;
+  }
+
+  .topbar {
+    padding: 0 18px;
+    height: auto;
+    min-height: 34px;
+    font-size: 10.5px;
+  }
+  .topbar > span:last-child {
+    display: none;
+  }
+
+  .navigation {
+    margin: 0 18px;
+    gap: 12px;
+    height: 70px;
+  }
+  .logo {
+    font-size: 22px;
+  }
+  .header-cta {
+    font-size: 11px;
+    padding: 8px 14px;
+    margin-left: auto;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 720px;
+  }
+  .hero-copy {
+    width: 100%;
+    padding: 130px 20px 100px;
+  }
+  .hero-bottom {
+    width: 100%;
+    padding: 0 20px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .lucide-arrow-down-right {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Page Banners */
+  .page-banner {
+    padding: 100px 20px 50px;
+  }
+  .page-banner h1 {
+    font-size: 32px !important;
+  }
+  .page-banner p {
+    font-size: 15px;
+  }
+
+  /* Solutions 3-Col */
+  .solutions {
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+    gap: 24px;
+  }
+  .stat-card strong {
+    font-size: 72px;
+  }
+
+  /* Master Dossier Console on Mobile */
+  .master-dossier-section {
+    padding: 60px 20px 80px;
+  }
+  .dossier-intro-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+  }
+  .dossier-intro-left h2 {
+    font-size: 28px !important;
+  }
+  .dossier-sidebar {
+    padding: 20px 14px;
+  }
+  .dossier-nav-btn {
+    padding: 12px 10px;
+    grid-template-columns: 24px 1fr 18px;
+  }
+  .dossier-nav-btn .p-name {
+    font-size: 13.5px;
+  }
+  .dossier-display-card {
+    padding: 32px 20px;
+    min-height: auto;
+  }
+  .dossier-title {
+    font-size: 26px !important;
+    margin: 20px 0 14px;
+  }
+  .dossier-description {
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+  .dossier-deliverables-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+  .col-primary-val,
+  .col-fidelity-val {
+    font-size: 18px;
+  }
+  .dossier-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 24px;
+    font-size: 9.5px;
+  }
+
+  /* Executive Form on Mobile */
+  .executive-spec-card {
+    padding: 36px 20px;
+  }
+  .executive-spec-card h3 {
+    font-size: 26px !important;
+  }
+  .exec-priorities-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .exec-submit-btn {
+    height: 52px;
+    font-size: 11.5px;
+  }
+
+  /* About Us Manifesto Cards */
+  .principles-manifesto-section {
+    padding: 70px 20px;
+  }
+  .principles-manifesto-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .principles-manifesto-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .principle-manifesto-card {
+    padding: 32px 22px;
+  }
+
+  /* Process / Client / Insights Projected Cards */
+  .process-stages-section,
+  .sectors-stages-section,
+  .whitepapers-stages-section {
+    padding: 70px 20px;
+  }
+  .process-stage-card,
+  .sector-projected-card,
+  .whitepaper-projected-card {
+    padding: 32px 22px;
+  }
+  .process-stage-card h3,
+  .sector-projected-card h3,
+  .whitepaper-projected-card h3 {
+    font-size: 22px;
+  }
+
+  /* Team Grid */
+  .team {
+    padding: 60px 20px;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Testimonials */
+  .testimonial {
+    padding: 70px 20px;
+  }
+  .testimonial blockquote {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+  .quote-mark {
+    display: none;
+  }
+  .quote-bottom {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Contact CTA Bar */
+  .contact {
+    padding: 60px 20px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 36px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  footer span {
+    margin-left: 0;
+  }
+}
+
+/* --- SMALL PHONES (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+  .header-cta {
+    padding: 6px 10px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+  .navigation {
+    margin: 0 12px;
+    gap: 8px;
+  }
+  .hero-copy {
+    padding: 120px 16px 80px;
+  }
+  .hero-bottom-text {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .dossier-card-nav {
+    padding: 14px 0;
+  }
+  .dossier-nav-arrow-btn {
+    padding: 8px 12px;
+  }
+  .dossier-nav-arrow-btn .nav-arrow-label strong {
+    display: none;
+  }
+  .dossier-nav-tracker .curr-pill {
+    font-size: 15px;
+  }
+}

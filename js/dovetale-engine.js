@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nav.style.padding = '24px 40px';
         nav.style.gap = '20px';
         nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+        nav.style.zIndex = '9999';
       }
     });
   }
