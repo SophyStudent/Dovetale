@@ -1,12 +1,12 @@
-# Structiva — Website Architecture & UX Strategy
+# Dovetale — Website Architecture & UX Strategy
 
 ## 1. Website Strategic Purpose & Sitemap
 
-The Structiva website is not a passive brochure; it is an active conversion engine designed to educate business owners on the cost of disconnected marketing, demonstrate technical authority across the 10 infrastructure pillars, and drive qualified inquiries.
+The Dovetale website is not a passive brochure; it is an active conversion engine designed to educate business owners on the cost of disconnected marketing, demonstrate technical authority across the 10 infrastructure pillars, and drive qualified inquiries.
 
 ### Complete Sitemap & URL Hierarchy
 ```
-Structiva Website (Domain: structiva.io or equivalent)
+Dovetale Website (Domain: dovetalemarketing.com or equivalent)
 ├── / (Home)
 ├── /about (About Us & Philosophy)
 ├── /services (The 10 Infrastructure Pillars)
@@ -21,7 +21,7 @@ Structiva Website (Domain: structiva.io or equivalent)
 ## 2. Navigation Architecture & Header/Footer Specifications
 
 ### Global Header (Desktop & Mobile)
-- **Brand Logo:** Structiva mark (Clean geometric architecture mark + wordmark).
+- **Brand Logo:** Dovetale mark (Clean geometric architecture mark + wordmark).
 - **Primary Desktop Navigation Links:**
   1. `Services` (with dropdown overview of the 10 pillars)
   2. `How We Work`
@@ -32,7 +32,7 @@ Structiva Website (Domain: structiva.io or equivalent)
 - **Mobile Navigation:** Minimalist drawer menu with persistent sticky header and full-width bottom CTA button.
 
 ### Global Footer Structure
-- **Column 1 (Brand):** Structiva logo, tagline (*Building the systems behind business growth*), copyright, and privacy/terms links.
+- **Column 1 (Brand):** Dovetale logo, tagline (*Building the systems behind business growth*), copyright, and privacy/terms links.
 - **Column 2 (Infrastructure Pillars):** Quick links to core service areas (Intelligence, Conversion, Tracking, Automation).
 - **Column 3 (Company & Process):** Links to `How We Work`, `Who We Serve`, `About Us`, and `Insights`.
 - **Column 4 (Direct Action):** Office/Virtual contact details, business email, and direct link to schedule an infrastructure audit.
@@ -54,7 +54,7 @@ The site accommodates three primary visitor mindsets:
        ▼
 [Services: Specific Pillar Module] ────► [How We Work Process] ─► [/contact: Book Consultation]
 
-[Executive / Scrutiny Visitor: "Who is Structiva and can I trust them?"]
+[Executive / Scrutiny Visitor: "Who is Dovetale and can I trust them?"]
        │
        ▼
 [About: Philosophy & Engineering View] ─► [Insights / Proof] ──► [/contact: Request Proposal]

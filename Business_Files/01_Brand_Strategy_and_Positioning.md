@@ -1,12 +1,12 @@
-# Structiva — Brand Strategy & Positioning
+# Dovetale — Brand Strategy & Positioning
 
 ## 1. Executive Summary & Brand Identity
 
-- **Brand Name:** Structiva
+- **Brand Name:** Dovetale
 - **Descriptor:** Business & Marketing Systems
 - **Core Tagline:** *Building the systems behind business growth.*
 - **Core Positioning Statement:**  
-  *Structiva designs, builds, and integrates business and marketing systems that empower startups, small businesses, and mid-sized enterprises to attract, convert, and retain customers predictably while making disciplined, data-backed decisions.*
+  *Dovetale designs, builds, and integrates business and marketing systems that empower startups, small businesses, and mid-sized enterprises to attract, convert, and retain customers predictably while making disciplined, data-backed decisions.*
 
 ---
 
@@ -36,8 +36,8 @@ Most startups and SMEs treat marketing as a collection of isolated campaigns rat
 4. **Zero Retention Mechanics:** Acquiring a customer once but lacking automated post-purchase onboarding, win-back flows, or lifecycle email marketing.
 5. **Operational Drag:** Manual data entry between ad platforms, spreadsheets, and fulfillment, wasting hours weekly on repetitive tasks.
 
-### The Structiva Solution
-Structiva bridges this gap by engineering the underlying **marketing infrastructure**. We don't just launch campaigns; we build the pipes, tracking, data models, and automated pathways that ensure every marketing dollar is measurable, captured, and converted.
+### The Dovetale Solution
+Dovetale bridges this gap by engineering the underlying **marketing infrastructure**. We don't just launch campaigns; we build the pipes, tracking, data models, and automated pathways that ensure every marketing dollar is measurable, captured, and converted.
 
 ---
 

@@ -1,9 +1,9 @@
 # Page 5: Who We Serve & Our Work
-### Structiva — Solutions by Business Stage & Project Showcase
+### Dovetale — Solutions by Business Stage & Project Showcase
 
 ## 1. Page Metadata
-- **Page Title:** Who We Serve & Demonstrations — Structiva
-- **Meta Description:** Discover how Structiva tailors marketing infrastructure for startups, small businesses and SMEs, featuring demonstration case studies, tracking setups and system workflows.
+- **Page Title:** Who We Serve & Demonstrations — Dovetale
+- **Meta Description:** Discover how Dovetale tailors marketing infrastructure for startups, small businesses and SMEs, featuring demonstration case studies, tracking setups and system workflows.
 - **URL Slug:** `/who-we-serve`
 
 ---
@@ -44,7 +44,7 @@
 ## Section 3: Demonstration Case Studies & Project Blueprints
 
 > **Note on Client Privacy & Work In Progress:**  
-> To protect proprietary client data and respect confidentiality agreements, the following projects illustrate typical infrastructure builds, architectures, and measurable outcomes engineered by Structiva.
+> To protect proprietary client data and respect confidentiality agreements, the following projects illustrate typical infrastructure builds, architectures, and measurable outcomes engineered by Dovetale.
 
 ### Project Demonstration A: The Multi-Channel Lead Generation Overhaul
 - **Client Profile:** B2B Professional Services Firm (Small Business).

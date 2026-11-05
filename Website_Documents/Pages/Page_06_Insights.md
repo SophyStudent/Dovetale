@@ -1,8 +1,8 @@
 # Page 6: Insights & Resources
-### Structiva — Practical Knowledge for Better Business Systems
+### Dovetale — Practical Knowledge for Better Business Systems
 
 ## 1. Page Metadata
-- **Page Title:** Insights & Resources — Business & Marketing Infrastructure | Structiva
+- **Page Title:** Insights & Resources — Business & Marketing Infrastructure | Dovetale
 - **Meta Description:** Practical guides, technical breakdowns, tutorials, and strategic frameworks on marketing tracking, conversion rate optimization, CRM automation, and business systems.
 - **URL Slug:** `/insights`
 

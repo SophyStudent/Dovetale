@@ -1,10 +1,10 @@
 # Page 1: Home Page
-### Structiva — Building the Systems Behind Business Growth
+### Dovetale — Building the Systems Behind Business Growth
 *(Modeled on the Layout Cadence of Leroux & Optivo Corporate Consulting)*
 
 ## 1. Page Metadata
-- **Page Title:** Structiva — Building the Systems Behind Business Growth
-- **Meta Description:** Structiva designs, builds and connects the marketing infrastructure behind predictable business growth. Move from disconnected marketing to connected systems.
+- **Page Title:** Dovetale — Building the Systems Behind Business Growth
+- **Meta Description:** Dovetale designs, builds and connects the marketing infrastructure behind predictable business growth. Move from disconnected marketing to connected systems.
 - **URL Slug:** `/`
 
 ---
@@ -13,9 +13,9 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ TOP UTILITY BAR: Inquiries: hello@structiva.io  |  Response SLA: <4 Hrs  |  Mon-Fri: 9-6│
+│ TOP UTILITY BAR: Inquiries: hello@dovetalemarketing.com  |  Response SLA: <4 Hrs  |  Mon-Fri: 9-6│
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│ STICKY NAVIGATION: [STRUCTIVA] ─── Services ─── How We Work ─── About ─── [Consultation]│
+│ STICKY NAVIGATION: [DOVETALE] ─── Services ─── How We Work ─── About ─── [Consultation]│
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │ SECTION 1: HERO (Leroux Split-Layout)                                                  │
 │   • Left (60%): Editorial Headline, Narrative, Dual Action Buttons                    │
@@ -27,7 +27,7 @@
 │ SECTION 3: THE BUSINESS CHALLENGES (High-Contrast Light Section)                       │
 │   • 5 Relatable Problem Cards: Unattributed Spend, Leaky Funnels, Lost Leads, etc.     │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│ SECTION 4: WHAT STRUCTIVA DOES (Systems Architecture Section)                          │
+│ SECTION 4: WHAT DOVETALE DOES (Systems Architecture Section)                          │
 │   • Deep Navy band with Connected Systems Diagram & Core Positioning                   │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │ SECTION 5: THE 10 SERVICE PILLARS (Leroux Interactive Card Grid)                       │
@@ -48,7 +48,7 @@
 ### Section 0: Top Utility Bar (Optivo Pattern)
 - **Background:** Deepest Navy (`#0B1324`) | Height: 40px | Border-Bottom: `1px solid #1E293B`
 - **Left Items:**  
-  `Direct Inquiries: hello@structiva.io` &nbsp;|&nbsp; `Response Time SLA: Under 4 Business Hours`
+  `Direct Inquiries: hello@dovetalemarketing.com` &nbsp;|&nbsp; `Response Time SLA: Under 4 Business Hours`
 - **Right Items:**  
   `Operating Hours: Mon – Fri, 9:00 AM – 6:00 PM` &nbsp;|&nbsp; `[Client Portal / WhatsApp Inquiries →]`
 
@@ -64,7 +64,7 @@
     
     Each activity takes time, money and effort. But when your advertising, website, customer data, sales processes and follow-up systems aren't connected, you're left managing separate activities without a clear picture of how they contribute to your business.  
     
-    Structiva helps you build the structure behind your marketing — connecting your platforms, organising customer data, streamlining sales processes and making your business performance measurable.
+    Dovetale helps you build the structure behind your marketing — connecting your platforms, organising customer data, streamlining sales processes and making your business performance measurable.
   - **Dual Action Buttons:**  
     `[Book a Systems Consultation]` *(Solid Teal `#16B8A6`, white text, 6px radius)* &nbsp;  
     `[Explore the 10 Pillars →]` *(Ghost button, 1px border `#E2E8F0`, white text)*
@@ -105,11 +105,11 @@
 
 ---
 
-### Section 4: What Structiva Does
+### Section 4: What Dovetale Does
 - **Background:** Deep Navy (`#101D35`)
 - **Headline (H2):** We Build the Systems Behind Your Business Growth.
 - **Body Copy:**  
-  Structiva designs, implements and connects the infrastructure that makes your marketing function as one cohesive system.  
+  Dovetale designs, implements and connects the infrastructure that makes your marketing function as one cohesive system.  
   
   We don't offer generic marketing campaigns or isolated services. We build the operational structure that helps your business attract the right audience, convert visitors, manage leads, retain customers and make decisions using reliable data.
 
@@ -182,4 +182,4 @@
 - **Body Copy:**  
   You don't have to figure out your marketing infrastructure alone. Tell us about your business, the challenges you're facing and what you want to achieve. We'll examine your current setup and identify the systems that will make the biggest difference.
 - **Primary Action:** `[Book a Systems Consultation]` (Links to `/contact`)
-- **Secondary Action:** `[Contact Structiva Directly]`
+- **Secondary Action:** `[Contact Dovetale Directly]`

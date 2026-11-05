@@ -1,5 +1,5 @@
 /**
- * STRUCTIVA - Masterclass Interactive Engine
+ * DOVETALE - Masterclass Interactive Engine
  * Powers the exact Leroux luxury interactions:
  * - Full-bleed hero slider with smooth background transitions, slide counter, and progress bar
  * - Interactive process steps with dynamic photo switching
@@ -161,13 +161,13 @@ document.addEventListener('DOMContentLoaded', function () {
   if (testimonial) {
     const quotes = [
       {
-        quote: "“Structiva eliminated our tracking blindness post-iOS 14. Within 4 weeks of deploying their server-side CAPI and CRM attribution pipeline, our Meta and Google ROAS scaled by 41% with complete data fidelity.”",
+        quote: "“Dovetale eliminated our tracking blindness post-iOS 14. Within 4 weeks of deploying their server-side CAPI and CRM attribution pipeline, our Meta and Google ROAS scaled by 41% with complete data fidelity.”",
         author: "Raymond Cole",
         role: "VP of Growth · Apex SaaS Global",
         avatar: "images/testimonials-img.png"
       },
       {
-        quote: "“Before Structiva, our HubSpot pipeline and paid advertising were living in different universes. Structiva engineered a bi-directional sync that allows ad algorithms to bid exclusively on closed-won revenue.”",
+        quote: "“Before Dovetale, our HubSpot pipeline and paid advertising were living in different universes. Dovetale engineered a bi-directional sync that allows ad algorithms to bid exclusively on closed-won revenue.”",
         author: "Elena Rostova",
         role: "Chief Commercial Officer · FinEdge Technologies",
         avatar: "images/testimonials-img-6.png"

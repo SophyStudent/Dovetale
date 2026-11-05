@@ -1,9 +1,9 @@
 # Page 3: Services
-### Structiva — We Build the Systems That Make Your Marketing Work
+### Dovetale — We Build the Systems That Make Your Marketing Work
 
 ## 1. Page Metadata
-- **Page Title:** Marketing Infrastructure Services — Structiva
-- **Meta Description:** Structiva designs, builds and connects business marketing infrastructure across ten essential areas, from market intelligence to automated systems.
+- **Page Title:** Marketing Infrastructure Services — Dovetale
+- **Meta Description:** Dovetale designs, builds and connects business marketing infrastructure across ten essential areas, from market intelligence to automated systems.
 - **URL Slug:** `/services`
 
 ---
@@ -17,7 +17,7 @@
 - **Body Copy:**  
   Your marketing involves more than advertising, content and a website. It involves understanding your market, reaching the right people, converting interest into sales, managing customer relationships and measuring what actually contributes to business growth.  
   
-  Structiva brings these activities together through **ten connected service areas**.  
+  Dovetale brings these activities together through **ten connected service areas**.  
   
   Whether you need to establish your marketing foundations, fix gaps in your existing setup or connect platforms that aren't working together, we identify what your business needs and build the systems to support it.
 - **Primary CTA:** `[Book a Consultation]` (Links to `/contact`)
@@ -249,4 +249,4 @@ When your tools operate independently, you may spend unnecessary time moving inf
 - **Headline (H2):** Let's Build the Right Systems for Your Business.
 - **Body Copy:** You don't need to know every technical requirement before speaking with us. We'll examine your current setup and identify the systems, improvements and integrations that make sense for your business.
 - **Primary CTA:** `[Book a Consultation]` (Links to `/contact`)
-- **Secondary CTA:** `[Contact Structiva]`
+- **Secondary CTA:** `[Contact Dovetale]`

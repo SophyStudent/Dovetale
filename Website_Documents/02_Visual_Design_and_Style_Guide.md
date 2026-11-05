@@ -1,11 +1,11 @@
-# Structiva — Visual Design & Style Guide
+# Dovetale — Visual Design & Style Guide
 ### Design System: Synthesizing Leroux (Qode Interactive) & Optivo Corporate Consulting (Bracketweb)
 
 ## 1. Design Philosophy & Aesthetic Blueprint
 
-The Structiva visual identity fuses the **editorial prestige, refined typography, and generous negative space of *Leroux*** with the **high-clarity corporate structure, numbered process grids, and conversion rigor of *Optivo Corporate Consulting***.
+The Dovetale visual identity fuses the **editorial prestige, refined typography, and generous negative space of *Leroux*** with the **high-clarity corporate structure, numbered process grids, and conversion rigor of *Optivo Corporate Consulting***.
 
-The result is an **Elite Systems Architecture** aesthetic—positioning Structiva as an authoritative business infrastructure consultancy rather than a low-tier marketing agency.
+The result is an **Elite Systems Architecture** aesthetic—positioning Dovetale as an authoritative business infrastructure consultancy rather than a low-tier marketing agency.
 
 ---
 
@@ -59,12 +59,12 @@ The result is an **Elite Systems Architecture** aesthetic—positioning Structiv
 
 ### A. Top Utility Bar (Optivo Pattern)
 - Height: 40px | Background: `#0B1324` (Deepest Navy) | Border-bottom: `1px solid #1E293B`.
-- Left: Direct contact indicator (`Inquiries: hello@structiva.io` | `Response SLA: Under 4 Hours`).
+- Left: Direct contact indicator (`Inquiries: hello@dovetalemarketing.com` | `Response SLA: Under 4 Hours`).
 - Right: Office operating hours (`Mon – Fri: 9am – 6pm`) + Client portal / direct WhatsApp quick-link.
 
 ### B. Sticky Corporate Header
 - Height: 80px | Background: `#101D35` (90% blur backdrop filter) | Border-bottom: `1px solid rgba(255,255,255,0.08)`.
-- Left: Structiva wordmark with architectural geometric logo icon.
+- Left: Dovetale wordmark with architectural geometric logo icon.
 - Center: Horizontal navigation links with subtle teal underline hover transitions.
 - Right: High-contrast consultation button: Solid Teal (`#16B8A6`), white bold text, 6px border radius.
 

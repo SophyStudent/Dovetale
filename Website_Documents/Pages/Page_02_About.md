@@ -1,9 +1,9 @@
 # Page 2: About Us
-### Structiva — We Believe Better Business Growth Starts With Better Systems
+### Dovetale — We Believe Better Business Growth Starts With Better Systems
 
 ## 1. Page Metadata
-- **Page Title:** About Structiva — Why We Build Business & Marketing Systems
-- **Meta Description:** Learn why Structiva was established, our core philosophy on connected business systems, and how we help growing businesses move past disconnected marketing.
+- **Page Title:** About Dovetale — Why We Build Business & Marketing Systems
+- **Meta Description:** Learn why Dovetale was established, our core philosophy on connected business systems, and how we help growing businesses move past disconnected marketing.
 - **URL Slug:** `/about`
 
 ---
@@ -12,7 +12,7 @@
 
 ### Section 1: Introduction & Hero
 - **Background:** Deep Navy (`#101D35`) with subtle teal light accents.
-- **Eyebrow:** `ABOUT STRUCTIVA`
+- **Eyebrow:** `ABOUT DOVETALE`
 - **Headline (H1):** We Believe Better Business Growth Starts With Better Systems.
 - **Body Copy:**  
   Running a business involves more than delivering great products or services.  
@@ -21,7 +21,7 @@
   
   As your business grows, these activities become increasingly connected. Without the right structure, managing them can become overwhelming, inefficient and difficult to measure.  
   
-  **Structiva exists to solve that problem.**  
+  **Dovetale exists to solve that problem.**  
   
   We design, build and connect the marketing systems that allow businesses to attract, convert and retain customers while making better decisions using reliable information.
 
@@ -39,7 +39,7 @@
   
   The issue was rarely the business, the product or the effort invested. **The issue was the absence of a connected system.**  
   
-  We created Structiva to provide businesses with the structure, clarity and operational efficiency they need to market themselves effectively.
+  We created Dovetale to provide businesses with the structure, clarity and operational efficiency they need to market themselves effectively.
 
 ---
 
@@ -67,7 +67,7 @@
 - **Background:** White (`#FFFFFF`)
 - **Headline (H2):** What Sets Our Approach Apart
 
-| Traditional Agency Approach | The Structiva Systems Approach |
+| Traditional Agency Approach | The Dovetale Systems Approach |
 | :--- | :--- |
 | Sells isolated marketing services (just ads, just SEO, or just design). | Builds connected systems where every tool and process works together. |
 | Focuses on surface-level metrics like impressions, clicks and vanity followers. | Focuses on operational metrics: Cost Per Lead, conversion rate, retention and ROAS. |
@@ -91,7 +91,7 @@
 - **Background:** White (`#FFFFFF`)
 - **Headline (H2):** Our Commitment
 - **Body Copy:**  
-  When you work with Structiva, we commit to three standards:
+  When you work with Dovetale, we commit to three standards:
   - **Transparency:** You will always understand what we are building, why we are building it and how it works.
   - **Practicality:** We build systems that fit your business reality, your budget and your operational capacity.
   - **Ownership:** Everything we configure, build and implement belongs to your business. You retain full access, documentation and control.

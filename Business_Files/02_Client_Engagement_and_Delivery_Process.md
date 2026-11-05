@@ -1,9 +1,9 @@
-# Structiva — Client Engagement & Delivery Process
+# Dovetale — Client Engagement & Delivery Process
 ### Operational Framework & Client Collateral Architecture
 
 ## 1. The Two Halves of the Service System
 
-A central principle of Structiva's operations is the strict separation between what you build internally and how you communicate commercially to clients:
+A central principle of Dovetale's operations is the strict separation between what you build internally and how you communicate commercially to clients:
 
 ```
 ┌───────────────────────────────────────────────┐     ┌───────────────────────────────────────────────┐
@@ -30,7 +30,7 @@ A central principle of Structiva's operations is the strict separation between w
 
 ## 2. Where the Client Encounters Your Service (The Collateral Suite)
 
-A prospective client encounters Structiva across four distinct touchpoints, each supported by a dedicated commercial asset:
+A prospective client encounters Dovetale across four distinct touchpoints, each supported by a dedicated commercial asset:
 
 1. **On Your Website (Discovery):**  
    They visit your `/services` page and read about your offering and the ten areas of marketing infrastructure you build.
@@ -110,7 +110,7 @@ Every client engagement moves through five structured operational stages:
 
 During the initial discovery call, prospective clients are evaluated against six core operational criteria:
 
-| Category | Diagnostic Question | Red Flag / Problem Indicator | Structiva Remediation |
+| Category | Diagnostic Question | Red Flag / Problem Indicator | Dovetale Remediation |
 | :--- | :--- | :--- | :--- |
 | **Attribution** | Can you identify which specific campaign, ad, or keyword generated your last 10 paying customers? | "We rely on platform-reported numbers" or "We just track overall revenue." | Implement GTM, GA4, CAPI, and standardized UTM parameters. |
 | **Conversion** | What is your website's baseline conversion rate, and where do visitors drop off most frequently? | "We don't track drop-off" or "It feels low but we aren't sure." | Deploy event tracking on key funnel steps; re-architect landing pages. |

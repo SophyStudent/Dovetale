@@ -1,9 +1,9 @@
 # Page 7: Contact Us
-### Structiva — Start a Conversation About Your Business Systems
+### Dovetale — Start a Conversation About Your Business Systems
 
 ## 1. Page Metadata
-- **Page Title:** Contact Structiva — Book a Marketing Infrastructure Consultation
-- **Meta Description:** Ready to fix the gaps in your marketing systems? Get in touch with Structiva to discuss your challenges, explore our services, or schedule an initial consultation.
+- **Page Title:** Contact Dovetale — Book a Marketing Infrastructure Consultation
+- **Meta Description:** Ready to fix the gaps in your marketing systems? Get in touch with Dovetale to discuss your challenges, explore our services, or schedule an initial consultation.
 - **URL Slug:** `/contact`
 
 ---
@@ -12,7 +12,7 @@
 
 ### Section 1: Contact Introduction
 - **Background:** Deep Navy (`#101D35`) with subtle teal light accents.
-- **Eyebrow:** `CONTACT STRUCTIVA`
+- **Eyebrow:** `CONTACT DOVETALE`
 - **Headline (H1):** Let's Talk About Your Business Systems
 - **Body Copy:**  
   Whether you have a specific marketing system challenge, want to understand how our ten pillars apply to your business, or are ready to explore an infrastructure project, we'd welcome a conversation.  
@@ -77,7 +77,7 @@
 ---
 
 ## Section 4: Official Contact Details
-- **Email:** `hello@structiva.io` (or designated business email)
+- **Email:** `hello@dovetalemarketing.com` (or designated business email)
 - **WhatsApp / Phone:** Direct channel provided upon consultation booking
 - **Office / Working Hours:** Monday to Friday, 9:00 AM – 6:00 PM
 - **Social & Professional Channels:** LinkedIn, Twitter/X, and YouTube
@@ -106,7 +106,7 @@
   *A:* You will speak directly with an infrastructure specialist who understands business systems, tracking, and marketing operations—not a commission-driven salesperson.
 - **Q2: Do I need to have all my business data organized before contacting you?**  
   *A:* No. Part of our service involves helping you identify what data exists, what is missing, and how to organize it properly.
-- **Q3: What size businesses does Structiva typically work with?**  
+- **Q3: What size businesses does Dovetale typically work with?**  
   *A:* We work with early-stage startups establishing their initial systems, small businesses organizing and automating their marketing, and medium-sized businesses integrating multi-platform workflows.
 - **Q4: Is there any obligation after an initial consultation?**  
   *A:* None whatsoever. The introductory consultation is designed to help both sides evaluate whether working together makes commercial and operational sense.

@@ -1,9 +1,9 @@
-# Structiva — Client-Facing Service Catalog
+# Dovetale — Client-Facing Service Catalog
 ### Business & Marketing Infrastructure Offerings
 
 ## 1. Commercial Proposition
 
-Structiva designs and builds **Business & Marketing Infrastructure**. We replace fragmented, disconnected tactics with an integrated growth system that attracts qualified prospects, converts them into paying customers, and keeps them returning.
+Dovetale designs and builds **Business & Marketing Infrastructure**. We replace fragmented, disconnected tactics with an integrated growth system that attracts qualified prospects, converts them into paying customers, and keeps them returning.
 
 ---
 
@@ -56,7 +56,7 @@ Structiva designs and builds **Business & Marketing Infrastructure**. We replace
 
 ## 3. The 10-Pillar Service & Deliverables Framework
 
-This matrix defines what Structiva performs (services and activities) and what the client receives (deliverables):
+This matrix defines what Dovetale performs (services and activities) and what the client receives (deliverables):
 
 | # | Infrastructure Pillar | Services & Activities | Key Client Deliverables |
 | :-: | :--- | :--- | :--- |

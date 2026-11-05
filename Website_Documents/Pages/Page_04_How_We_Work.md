@@ -1,9 +1,9 @@
 # Page 4: How We Work
-### Structiva — Our Working Methodology & Delivery Process
+### Dovetale — Our Working Methodology & Delivery Process
 
 ## 1. Page Metadata
-- **Page Title:** How We Work — Structiva's Delivery Process & Approach
-- **Meta Description:** Understand how Structiva approaches client engagements, from initial consultation and assessment to infrastructure development, testing, and continuous optimization.
+- **Page Title:** How We Work — Dovetale's Delivery Process & Approach
+- **Meta Description:** Understand how Dovetale approaches client engagements, from initial consultation and assessment to infrastructure development, testing, and continuous optimization.
 - **URL Slug:** `/how-we-work`
 
 ---
@@ -31,7 +31,7 @@
 
 ### 1. Initial Consultation
 - **Focus:** Understanding your business, your current challenges and what you want to achieve.
-- **What Happens:** We discuss your offerings, target audience, existing marketing activities, and the operational pain points holding you back. This helps us determine whether Structiva is the right partner for your needs.
+- **What Happens:** We discuss your offerings, target audience, existing marketing activities, and the operational pain points holding you back. This helps us determine whether Dovetale is the right partner for your needs.
 
 ### 2. Business & Marketing Assessment
 - **Focus:** Auditing your existing systems, processes, platforms and historical performance.
@@ -65,7 +65,7 @@
 
 ## Section 3: How This Differs from What You May Have Experienced
 
-| Traditional Freelancers & Agencies | The Structiva Delivery Method |
+| Traditional Freelancers & Agencies | The Dovetale Delivery Method |
 | :--- | :--- |
 | Jump straight into running ads without understanding your business economics. | Begins with a forensic assessment of products, market position, and historical data. |
 | Build isolated pages or tools that don't talk to the rest of your business. | Connects every tool into a unified system with automated data flow. |
