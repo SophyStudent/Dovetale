@@ -2586,3 +2586,156 @@ footer span {
     padding: 36px 28px;
   }
 }
+
+/* ==========================================================================
+   CLIENT & INSIGHTS - PROJECTED SHADOW CARDS (BORDERLESS)
+   ========================================================================== */
+.sectors-stages-section,
+.whitepapers-stages-section {
+  background: var(--paper);
+  padding: 110px 4.17vw;
+}
+
+.sectors-stages-header,
+.whitepapers-stages-header {
+  margin-bottom: 50px;
+  max-width: 680px;
+}
+
+.sectors-stages-header .kicker,
+.whitepapers-stages-header .kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'DM Mono', monospace, ui-monospace;
+}
+
+.sectors-stages-header h2,
+.whitepapers-stages-header h2 {
+  font-size: 38px;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.sectors-stages-header p,
+.whitepapers-stages-header p {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.sectors-stages-grid,
+.whitepapers-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.sector-projected-card,
+.whitepaper-projected-card {
+  background: #ffffff;
+  border: none !important;
+  outline: none !important;
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 20px 48px -10px rgba(32, 40, 45, 0.12), 0 10px 20px -8px rgba(32, 40, 45, 0.08);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+
+.sector-projected-card:hover,
+.whitepaper-projected-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 70px -12px rgba(32, 40, 45, 0.2), 0 16px 28px -8px rgba(32, 40, 45, 0.12);
+}
+
+.sector-projected-card .card-top-meta,
+.whitepaper-projected-card .card-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.sector-projected-card .card-tag,
+.whitepaper-projected-card .card-tag {
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  font-family: 'DM Mono', monospace, ui-monospace;
+}
+
+.sector-projected-card .card-num-ghost,
+.whitepaper-projected-card .card-num-ghost {
+  font-size: 34px;
+  font-weight: 300;
+  color: rgba(32, 40, 45, 0.18);
+  line-height: 1;
+  font-family: 'DM Mono', monospace, ui-monospace;
+}
+
+.sector-projected-card h3,
+.whitepaper-projected-card h3 {
+  font-size: 26px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.sector-projected-card p,
+.whitepaper-projected-card p {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.sector-projected-card .card-meta-footer,
+.whitepaper-projected-card .card-meta-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(32, 40, 45, 0.08);
+  font-size: 13.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.sector-projected-card .card-meta-footer span:last-child {
+  color: var(--soft);
+}
+
+.whitepaper-projected-card .card-meta-footer a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.whitepaper-projected-card .card-meta-footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .sectors-stages-grid,
+  .whitepapers-stages-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .sector-projected-card,
+  .whitepaper-projected-card {
+    padding: 36px 28px;
+  }
+}
